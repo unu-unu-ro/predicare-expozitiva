@@ -33,7 +33,7 @@ const sections = [
         external: true,
       },
       {
-        title: 'Seria \u201E9Marks: Zidind Biserici S\u0103n\u0103toase\u201D',
+        title: 'Seria „9Marks: Zidind Biserici Sănătoase”',
         desc: "Resurse biblice și practice pentru consolidarea bisericilor prin învățături esențiale despre sănătatea spirituală.",
         url: "https://www.magnagratia.org/serii/seria-9marks-zidind-biserici-sanatoase/",
         external: true,

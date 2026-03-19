@@ -70,9 +70,9 @@ const FisaPage = () => {
   const stepDisplay = currentStep === -1 ? 7 : currentStep + 1;
 
   const handleReset = () => {
-    if (window.confirm("Sigur vrei s\u0103 resetezi toate c\u00E2mpurile?")) {
+    if (window.confirm("Sigur vrei să resetezi toate câmpurile?")) {
       setForm(emptyForm);
-      toast({ title: "Resetat", description: "Toate c\u00E2mpurile au fost golite." });
+      toast({ title: "Resetat", description: "Toate câmpurile au fost golite." });
     }
   };
 
@@ -97,9 +97,9 @@ const FisaPage = () => {
         const text = await file.text();
         const data = JSON.parse(text);
         setForm({ ...emptyForm, ...data });
-        toast({ title: "Importat", description: "Fi\u0219a a fost \u00EEnc\u0103rcat\u0103 din fi\u0219ier." });
+        toast({ title: "Importat", description: "Fișa a fost încărcată din fișier." });
       } catch {
-        toast({ title: "Eroare", description: "Fi\u0219ierul nu este valid.", variant: "destructive" });
+        toast({ title: "Eroare", description: "Fișierul nu este valid.", variant: "destructive" });
       }
     };
     input.click();
@@ -111,7 +111,7 @@ const FisaPage = () => {
     if (!printWindow) return;
     printWindow.document.write(`
       <!DOCTYPE html>
-      <html><head><title>Fi\u0219a de Lucru - ${form.nume || "Necunoscut"}</title>
+      <html><head><title>Fișa de Lucru - ${form.nume || "Necunoscut"}</title>
       <style>
         body { font-family: Georgia, serif; max-width: 700px; margin: 40px auto; padding: 0 20px; color: #1a1a1a; font-size: 14px; line-height: 1.6; }
         h1 { text-align: center; font-size: 20px; margin-bottom: 4px; }
@@ -121,47 +121,47 @@ const FisaPage = () => {
         .field-value { white-space: pre-wrap; margin: 4px 0 12px; }
         @media print { body { margin: 20px; } }
       </style></head><body>
-      <h1>Fi\u0219a de Lucru pentru Predicare Expozitiv\u0103</h1>
-      <div class="meta">${form.nume ? `<strong>${form.nume}</strong> \u2014 ` : ""}${form.text || ""}</div>
+      <h1>Fișa de Lucru pentru Predicare Expozitivă</h1>
+      <div class="meta">${form.nume ? `<strong>${form.nume}</strong> — ` : ""}${form.text || ""}</div>
 
       <h2>1. Structura textului</h2>
-      <div class="field-label">a) Structura sub form\u0103 de sec\u021Biuni:</div>
-      <div class="field-value">${form.s1a || "\u2014"}</div>
+      <div class="field-label">a) Structura sub formă de secțiuni:</div>
+      <div class="field-value">${form.s1a || "—"}</div>
       <div class="field-label">b) Strategii folosite:</div>
-      <div class="field-value">${form.s1b || "\u2014"}</div>
+      <div class="field-value">${form.s1b || "—"}</div>
       <div class="field-label">c) Accentul structurii:</div>
-      <div class="field-value">${form.s1c || "\u2014"}</div>
+      <div class="field-value">${form.s1c || "—"}</div>
 
       <h2>2. Contextul pasajului</h2>
       <div class="field-label">a) Contextul literar:</div>
-      <div class="field-value">${form.s2a || "\u2014"}</div>
+      <div class="field-value">${form.s2a || "—"}</div>
       <div class="field-label">b) Contextul istoric:</div>
-      <div class="field-value">${form.s2b || "\u2014"}</div>
+      <div class="field-value">${form.s2b || "—"}</div>
       <div class="field-label">c) Contextul cultural:</div>
-      <div class="field-value">${form.s2c || "\u2014"}</div>
+      <div class="field-value">${form.s2c || "—"}</div>
       <div class="field-label">d) Contextul biblic:</div>
-      <div class="field-value">${form.s2d || "\u2014"}</div>
+      <div class="field-value">${form.s2d || "—"}</div>
 
-      <h2>3. Ideea central\u0103 a autorului</h2>
-      <div class="field-value">${form.s3 || "\u2014"}</div>
+      <h2>3. Ideea centrală a autorului</h2>
+      <div class="field-value">${form.s3 || "—"}</div>
 
-      <h2>4. Leg\u0103tura cu Evanghelia</h2>
-      <div class="field-value">${form.s4 || "\u2014"}</div>
+      <h2>4. Legătura cu Evanghelia</h2>
+      <div class="field-value">${form.s4 || "—"}</div>
 
-      <h2>5. Ideea ta central\u0103</h2>
-      <div class="field-value">${form.s5 || "\u2014"}</div>
+      <h2>5. Ideea ta centrală</h2>
+      <div class="field-value">${form.s5 || "—"}</div>
 
-      <h2>6. Aplica\u021Bii</h2>
-      <div class="field-label">Aplica\u021Bii pentru cei m\u00E2ntui\u021Bi:</div>
-      <div class="field-value">${form.s6a || "\u2014"}</div>
-      <div class="field-label">Aplica\u021Bii pentru cei nem\u00E2ntui\u021Bi:</div>
-      <div class="field-value">${form.s6b || "\u2014"}</div>
+      <h2>6. Aplicații</h2>
+      <div class="field-label">Aplicații pentru cei mântuiți:</div>
+      <div class="field-value">${form.s6a || "—"}</div>
+      <div class="field-label">Aplicații pentru cei nemântuiți:</div>
+      <div class="field-value">${form.s6b || "—"}</div>
 
-      <h2>7. Titlu \u0219i schi\u021B\u0103</h2>
+      <h2>7. Titlu și schiță</h2>
       <div class="field-label">Titlul predicii:</div>
-      <div class="field-value">${form.s7titlu || "\u2014"}</div>
-      <div class="field-label">Schi\u021Ba mesajului:</div>
-      <div class="field-value">${form.s7schita || "\u2014"}</div>
+      <div class="field-value">${form.s7titlu || "—"}</div>
+      <div class="field-label">Schița mesajului:</div>
+      <div class="field-value">${form.s7schita || "—"}</div>
 
       <script>window.print();</script>
       </body></html>
@@ -172,8 +172,8 @@ const FisaPage = () => {
   return (
     <Layout>
       <HeroBanner
-        title="Fi\u0219a de Lucru"
-        subtitle="Completeaz\u0103 online cei 7 pa\u0219i \u0219i genereaz\u0103 PDF"
+        title="Fișa de Lucru"
+        subtitle="Completează online cei 7 pași și generează PDF"
       />
 
       <section className="page-section">
@@ -182,8 +182,8 @@ const FisaPage = () => {
           {/* Instructions */}
           <div className="bg-card rounded-xl border border-border p-5 mb-8">
             <p className="text-muted-foreground text-sm leading-relaxed">
-              <strong className="text-foreground">Instruc\u021Biuni:</strong> Completeaz\u0103 toate c\u00E2mpurile pentru fiecare dintre cei 7 pa\u0219i. La sf\u00E2r\u0219itul formularului vei putea genera un PDF cu r\u0103spunsurile tale. Pentru l\u0103muriri despre fiecare pas, viziteaz\u0103{" "}
-              <Link to="/ghid" className="text-primary hover:text-accent underline underline-offset-2">ghidul de preg\u0103tire</Link>.
+              <strong className="text-foreground">Instrucțiuni:</strong> Completează toate câmpurile pentru fiecare dintre cei 7 pași. La sfârșitul formularului vei putea genera un PDF cu răspunsurile tale. Pentru lămuriri despre fiecare pas, vizitează{" "}
+              <Link to="/ghid" className="text-primary hover:text-accent underline underline-offset-2">ghidul de pregătire</Link>.
             </p>
           </div>
 
@@ -191,7 +191,7 @@ const FisaPage = () => {
           <div className="mb-8">
             <div className="flex items-center justify-between mb-2">
               <span className="text-sm font-medium text-foreground">
-                Progres fi\u0219a curent\u0103 \u2014 pasul {stepDisplay} din 7
+                Progres fișa curentă — pasul {stepDisplay} din 7
               </span>
               <button onClick={() => setShowGuide(!showGuide)} className="text-muted-foreground hover:text-primary transition-colors">
                 <Info size={18} />
@@ -202,15 +202,15 @@ const FisaPage = () => {
             {/* Actions bar */}
             <div className="flex flex-wrap items-center gap-3 mt-3 text-sm">
               <button onClick={handleReset} className="flex items-center gap-1 text-muted-foreground hover:text-destructive transition-colors">
-                <RotateCcw size={14} /> Reseteaz\u0103 c\u00E2mpuri
+                <RotateCcw size={14} /> Resetează câmpuri
               </button>
               <span className="text-border">|</span>
               <button onClick={handleUploadJSON} className="flex items-center gap-1 text-muted-foreground hover:text-primary transition-colors">
-                <Upload size={14} /> \u00CEncarc\u0103 din raw.json
+                <Upload size={14} /> Încarcă din raw.json
               </button>
               <span className="text-border">|</span>
               <button onClick={handleDownloadJSON} className="flex items-center gap-1 text-muted-foreground hover:text-primary transition-colors">
-                <Download size={14} /> Descarc\u0103 raw.json
+                <Download size={14} /> Descarcă raw.json
               </button>
             </div>
           </div>
@@ -220,14 +220,14 @@ const FisaPage = () => {
             <div className="bg-card rounded-xl border border-border p-5 mb-8">
               <div className="flex justify-between items-start mb-3">
                 <h3 className="font-display font-semibold text-foreground">Ghid de Formatare Text (PDF)</h3>
-                <button onClick={() => setShowGuide(false)} className="text-muted-foreground hover:text-foreground">\u00D7</button>
+                <button onClick={() => setShowGuide(false)} className="text-muted-foreground hover:text-foreground">×</button>
               </div>
               <ul className="text-sm text-muted-foreground space-y-1">
-                <li><code className="bg-muted px-1 rounded">**text**</code> \u2014 <strong>bold</strong></li>
-                <li><code className="bg-muted px-1 rounded">*text*</code> \u2014 <em>italic</em></li>
-                <li><code className="bg-muted px-1 rounded"># Titlu</code> \u2014 Titlu</li>
-                <li><code className="bg-muted px-1 rounded">## Subtitlu</code> \u2014 Subtitlu</li>
-                <li><code className="bg-muted px-1 rounded">- Element</code> \u2014 List\u0103</li>
+                <li><code className="bg-muted px-1 rounded">**text**</code> — <strong>bold</strong></li>
+                <li><code className="bg-muted px-1 rounded">*text*</code> — <em>italic</em></li>
+                <li><code className="bg-muted px-1 rounded"># Titlu</code> — Titlu</li>
+                <li><code className="bg-muted px-1 rounded">## Subtitlu</code> — Subtitlu</li>
+                <li><code className="bg-muted px-1 rounded">- Element</code> — Listă</li>
               </ul>
             </div>
           )}
@@ -253,16 +253,16 @@ const FisaPage = () => {
               <div className="gold-divider" />
               <div className="space-y-4">
                 <div className="space-y-2">
-                  <Label>a) Arat\u0103 structura sub form\u0103 de sec\u021Biuni, al\u0103turi de versetele aferente <span className="text-destructive">*</span></Label>
-                  <Textarea placeholder={"Ex: I. Introducere (v. 1-3)\nII. Dezvoltarea principal\u0103 (v. 4-10)\netc."} rows={4} value={form.s1a} onChange={(e) => set("s1a", e.target.value)} />
+                  <Label>a) Arată structura sub formă de secțiuni, alături de versetele aferente <span className="text-destructive">*</span></Label>
+                  <Textarea placeholder={"Ex: I. Introducere (v. 1-3)\nII. Dezvoltarea principală (v. 4-10)\netc."} rows={4} value={form.s1a} onChange={(e) => set("s1a", e.target.value)} />
                 </div>
                 <div className="space-y-2">
-                  <Label>b) Explic\u0103 strategiile folosite pentru a identifica structura <span className="text-destructive">*</span></Label>
-                  <Textarea placeholder="Ex: Cuvinte cheie repetate, conjunc\u021Bii, schimb\u0103ri de ton, etc." rows={3} value={form.s1b} onChange={(e) => set("s1b", e.target.value)} />
+                  <Label>b) Explică strategiile folosite pentru a identifica structura <span className="text-destructive">*</span></Label>
+                  <Textarea placeholder="Ex: Cuvinte cheie repetate, conjuncții, schimbări de ton, etc." rows={3} value={form.s1b} onChange={(e) => set("s1b", e.target.value)} />
                 </div>
                 <div className="space-y-2">
-                  <Label>c) Pe ce pune accent aceast\u0103 structur\u0103? <span className="text-destructive">*</span></Label>
-                  <Textarea placeholder="Explic\u0103 tema principal\u0103 eviden\u021Biat\u0103 prin structura identificat\u0103" rows={3} value={form.s1c} onChange={(e) => set("s1c", e.target.value)} />
+                  <Label>c) Pe ce pune accent această structură? <span className="text-destructive">*</span></Label>
+                  <Textarea placeholder="Explică tema principală evidențiată prin structura identificată" rows={3} value={form.s1c} onChange={(e) => set("s1c", e.target.value)} />
                 </div>
               </div>
             </fieldset>
@@ -271,22 +271,22 @@ const FisaPage = () => {
             <fieldset className="space-y-4">
               <legend className="section-subtitle">2. Contextul pasajului</legend>
               <div className="gold-divider" />
-              <p className="text-sm text-muted-foreground italic">Indica\u021Bie: Te rug\u0103m s\u0103 le incluzi doar pe cele care sunt relevante pentru \u00EEn\u021Belesul pasajului</p>
+              <p className="text-sm text-muted-foreground italic">Indicație: Te rugăm să le incluzi doar pe cele care sunt relevante pentru înțelesul pasajului</p>
               <div className="space-y-4">
                 <div className="space-y-2">
-                  <Label>a) Contextul literar <span className="text-muted-foreground text-xs">(pasajele dinainte \u0219i dup\u0103)</span></Label>
+                  <Label>a) Contextul literar <span className="text-muted-foreground text-xs">(pasajele dinainte și după)</span></Label>
                   <Textarea rows={3} value={form.s2a} onChange={(e) => set("s2a", e.target.value)} />
                 </div>
                 <div className="space-y-2">
-                  <Label>b) Contextul istoric <span className="text-muted-foreground text-xs">(\u00EEmprejur\u0103rile destinatarilor)</span></Label>
+                  <Label>b) Contextul istoric <span className="text-muted-foreground text-xs">(împrejurările destinatarilor)</span></Label>
                   <Textarea rows={3} value={form.s2b} onChange={(e) => set("s2b", e.target.value)} />
                 </div>
                 <div className="space-y-2">
-                  <Label>c) Contextul cultural <span className="text-muted-foreground text-xs">(detalii despre via\u021Ba oamenilor din acea vreme)</span></Label>
+                  <Label>c) Contextul cultural <span className="text-muted-foreground text-xs">(detalii despre viața oamenilor din acea vreme)</span></Label>
                   <Textarea rows={3} value={form.s2c} onChange={(e) => set("s2c", e.target.value)} />
                 </div>
                 <div className="space-y-2">
-                  <Label>d) Contextul biblic <span className="text-muted-foreground text-xs">(citate, aluzii sau leg\u0103turi cu alte c\u0103r\u021Bi)</span></Label>
+                  <Label>d) Contextul biblic <span className="text-muted-foreground text-xs">(citate, aluzii sau legături cu alte cărți)</span></Label>
                   <Textarea rows={3} value={form.s2d} onChange={(e) => set("s2d", e.target.value)} />
                 </div>
               </div>
@@ -297,44 +297,44 @@ const FisaPage = () => {
               <legend className="section-subtitle">3. Ideea autorului</legend>
               <div className="gold-divider" />
               <div className="space-y-2">
-                <Label>Care este ideea central\u0103 pe care o argumenteaz\u0103 autorul \u00EEn fa\u021Ba ascult\u0103torilor s\u0103i? <span className="text-destructive">*</span></Label>
-                <p className="text-xs text-muted-foreground italic">\u00EEntr-o propozi\u021Bie scurt\u0103</p>
+                <Label>Care este ideea centrală pe care o argumentează autorul în fața ascultătorilor săi? <span className="text-destructive">*</span></Label>
+                <p className="text-xs text-muted-foreground italic">într-o propoziție scurtă</p>
                 <Textarea rows={3} value={form.s3} onChange={(e) => set("s3", e.target.value)} />
               </div>
             </fieldset>
 
             {/* Step 4 */}
             <fieldset className="space-y-4">
-              <legend className="section-subtitle">4. Leg\u0103tura cu Evanghelia</legend>
+              <legend className="section-subtitle">4. Legătura cu Evanghelia</legend>
               <div className="gold-divider" />
               <div className="space-y-2">
-                <Label>Care este leg\u0103tura dintre acest pasaj \u0219i Evanghelia Domnului Isus Cristos? Ce parte a Evangheliei este avut\u0103 \u00EEn vedere? <span className="text-destructive">*</span></Label>
+                <Label>Care este legătura dintre acest pasaj și Evanghelia Domnului Isus Cristos? Ce parte a Evangheliei este avută în vedere? <span className="text-destructive">*</span></Label>
                 <Textarea rows={4} value={form.s4} onChange={(e) => set("s4", e.target.value)} />
               </div>
             </fieldset>
 
             {/* Step 5 */}
             <fieldset className="space-y-4">
-              <legend className="section-subtitle">5. Ideea ta central\u0103</legend>
+              <legend className="section-subtitle">5. Ideea ta centrală</legend>
               <div className="gold-divider" />
               <div className="space-y-2">
-                <Label>Care este ideea central\u0103 pe care tu o vei argumenta \u00EEn fa\u021Ba ascult\u0103torilor t\u0103i? <span className="text-destructive">*</span></Label>
-                <p className="text-xs text-muted-foreground italic">\u00EEntr-o propozi\u021Bie scurt\u0103</p>
+                <Label>Care este ideea centrală pe care tu o vei argumenta în fața ascultătorilor tăi? <span className="text-destructive">*</span></Label>
+                <p className="text-xs text-muted-foreground italic">într-o propoziție scurtă</p>
                 <Textarea rows={3} value={form.s5} onChange={(e) => set("s5", e.target.value)} />
               </div>
             </fieldset>
 
             {/* Step 6 */}
             <fieldset className="space-y-4">
-              <legend className="section-subtitle">6. Aplica\u021Bii</legend>
+              <legend className="section-subtitle">6. Aplicații</legend>
               <div className="gold-divider" />
               <div className="space-y-4">
                 <div className="space-y-2">
-                  <Label>Aplica\u021Bii pentru cei m\u00E2ntui\u021Bi <span className="text-destructive">*</span></Label>
+                  <Label>Aplicații pentru cei mântuiți <span className="text-destructive">*</span></Label>
                   <Textarea rows={3} value={form.s6a} onChange={(e) => set("s6a", e.target.value)} />
                 </div>
                 <div className="space-y-2">
-                  <Label>Aplica\u021Bii pentru cei nem\u00E2ntui\u021Bi <span className="text-destructive">*</span></Label>
+                  <Label>Aplicații pentru cei nemântuiți <span className="text-destructive">*</span></Label>
                   <Textarea rows={3} value={form.s6b} onChange={(e) => set("s6b", e.target.value)} />
                 </div>
               </div>
@@ -342,7 +342,7 @@ const FisaPage = () => {
 
             {/* Step 7 */}
             <fieldset className="space-y-4">
-              <legend className="section-subtitle">7. Titlu \u0219i schi\u021B\u0103</legend>
+              <legend className="section-subtitle">7. Titlu și schiță</legend>
               <div className="gold-divider" />
               <div className="space-y-4">
                 <div className="space-y-2">
@@ -350,7 +350,7 @@ const FisaPage = () => {
                   <Input value={form.s7titlu} onChange={(e) => set("s7titlu", e.target.value)} />
                 </div>
                 <div className="space-y-2">
-                  <Label>Cum arat\u0103 schi\u021Ba mesajului? <span className="text-destructive">*</span></Label>
+                  <Label>Cum arată schița mesajului? <span className="text-destructive">*</span></Label>
                   <Textarea rows={5} value={form.s7schita} onChange={(e) => set("s7schita", e.target.value)} />
                 </div>
               </div>
@@ -359,7 +359,7 @@ const FisaPage = () => {
             {/* Actions */}
             <div className="flex flex-wrap gap-4 pt-4 border-t border-border">
               <Link to="/" className="text-sm text-muted-foreground hover:text-primary transition-colors self-center">
-                \u2190 \u00CEnapoi la pagina principal\u0103
+                ← Înapoi la pagina principală
               </Link>
               <div className="flex-1" />
               <Button type="button" onClick={handlePreviewPDF} className="bg-primary hover:bg-teal-dark text-primary-foreground font-semibold">
