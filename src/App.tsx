@@ -10,6 +10,7 @@ import Resurse from "./pages/Resurse.tsx";
 import Contact from "./pages/Contact.tsx";
 import Ghid from "./pages/Ghid.tsx";
 import Fisa from "./pages/Fisa.tsx";
+import PrintPreview from "./pages/PrintPreview.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 const queryClient = new QueryClient();

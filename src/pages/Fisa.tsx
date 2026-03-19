@@ -1,5 +1,6 @@
 import { useState, useCallback } from "react";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import Layout from "@/components/Layout";
 import HeroBanner from "@/components/HeroBanner";
