@@ -130,8 +130,8 @@ const Index = () => {
             <p className="font-display italic text-lg md:text-xl text-cream/90 leading-relaxed">
               {quotes[quoteIndex].text}
             </p>
-            <div className="w-12 h-px bg-gold mx-auto my-4" />
-            <p className="text-sm font-semibold text-gold tracking-widest uppercase">
+            <div className="w-12 h-px bg-accent mx-auto my-4" />
+            <p className="text-sm font-semibold text-accent tracking-widest uppercase">
               {quotes[quoteIndex].ref}
             </p>
           </motion.div>
