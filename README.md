@@ -1,6 +1,6 @@
-# Predicare Expozitivă — CST România
+# Predicare Expozitivă
 
-Site-ul oficial al atelierelor de predicare expozitivă CST România.
+Site-ul oficial al atelierelor de predicare expozitivă.
 
 ## 🔗 Live
 
