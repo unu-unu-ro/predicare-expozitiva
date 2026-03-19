@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import Layout from "@/components/Layout";
 import HeroBanner from "@/components/HeroBanner";
+import SEOHead from "@/components/SEOHead";
 import {
   Accordion,
   AccordionContent,
