@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import Layout from "@/components/Layout";
 import HeroBanner from "@/components/HeroBanner";
+import SEOHead from "@/components/SEOHead";
 import { ExternalLink, BookOpen, Headphones, Globe } from "lucide-react";
 
 const sections = [
