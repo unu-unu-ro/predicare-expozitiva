@@ -15,19 +15,21 @@
     "type": "atelier",
     "link": "/events/CJ-2026",
     "eventId": "CJ-2026",
+    "urlInregistrare": "https://tally.so/r/PLACEHOLDER_INREGISTRARE",
+    "urlFeedback": "https://tally.so/r/PLACEHOLDER_FEEDBACK",
     "event": {
       "title": "Atelier de predicare expozitivă",
       "subtitle": "Predicare din profeți - AMOS",
       "details": "4-6 martie 2026 | Biserica Unu Unu, Cluj-Napoca"
     },
     "links": [
-      { "name": "Înregistrare", "url": "participanti", "icon": "user-plus", "active": true },
+      { "name": "Înregistrare", "url": "$inregistrare", "icon": "user-plus", "active": true },
       { "name": "Listă participanți", "url": "participanti", "icon": "file-text", "active": true },
       { "name": "Grupe de lucru", "url": "grupe", "icon": "users", "active": true },
       { "name": "Orar zilnic", "url": "orar", "icon": "calendar-days", "active": true },
       { "name": "Ghid de pregătire", "url": "/ghid", "icon": "book-open", "active": true },
       { "name": "Mapă participant PDF", "url": "handout", "icon": "file-down", "active": false },
-      { "name": "Feedback", "url": "feedback", "icon": "message-square", "active": false }
+      { "name": "Feedback", "url": "$feedback", "icon": "message-square", "active": false }
     ]
   }
 ]

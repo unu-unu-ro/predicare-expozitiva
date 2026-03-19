@@ -26,7 +26,14 @@ const EventHub = () => {
 
   if (!data) return null;
 
-  const { event, links } = data;
+  const { event, links, urlInregistrare, urlFeedback } = data;
+
+  // Resolve $inregistrare / $feedback placeholders to actual URLs
+  const resolveUrl = (url: string): string => {
+    if (url === "$inregistrare") return urlInregistrare || "#";
+    if (url === "$feedback") return urlFeedback || "#";
+    return url;
+  };
 
   return (
     <div className="min-h-[85vh] flex items-center justify-center px-4 py-8">
@@ -55,10 +62,11 @@ const EventHub = () => {
               .filter((l) => l.active)
               .map((link, i) => {
                 const Icon = iconMap[link.icon] || FileText;
-                const isExternal = link.url.startsWith("http") || link.url.startsWith("/");
+                const resolved = resolveUrl(link.url);
+                const isExternal = resolved.startsWith("http") || resolved.startsWith("/");
                 const to = isExternal
-                  ? link.url
-                  : `/events/${eventId}/${link.url}`;
+                  ? resolved
+                  : `/events/${eventId}/${resolved}`;
 
                 const btnClass =
                   "group flex items-center gap-3 w-full px-5 py-3 rounded-xl bg-primary text-primary-foreground font-semibold text-sm hover:bg-navy-dark transition-all hover:shadow-md";

@@ -23,6 +23,8 @@ interface EventEntry {
   type: string;
   link: string;
   eventId?: string;
+  urlInregistrare?: string;
+  urlFeedback?: string;
   event?: EventMeta;
   links?: EventLink[];
 }
@@ -30,6 +32,8 @@ interface EventEntry {
 export interface EventData {
   event: EventMeta;
   links: EventLink[];
+  urlInregistrare?: string;
+  urlFeedback?: string;
 }
 
 interface EventContextType {
@@ -53,7 +57,12 @@ const EventLayout = ({ children }: { children: ReactNode }) => {
       .then((events: EventEntry[]) => {
         const entry = events.find((e) => e.eventId === eventId);
         if (entry?.event && entry?.links) {
-          setData({ event: entry.event, links: entry.links });
+          setData({
+            event: entry.event,
+            links: entry.links,
+            urlInregistrare: entry.urlInregistrare,
+            urlFeedback: entry.urlFeedback,
+          });
         }
       })
       .catch(() => {});
