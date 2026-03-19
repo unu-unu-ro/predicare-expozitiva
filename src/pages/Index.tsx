@@ -54,7 +54,7 @@ const Index = () => {
       />
 
       {/* Main Content */}
-      <section className="page-section">
+      <section className="page-section relative">
         <motion.div
           initial="hidden"
           whileInView="visible"
