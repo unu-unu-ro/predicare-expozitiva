@@ -19,7 +19,7 @@ const SiteHeader = () => {
     <nav className="sticky top-0 z-50 bg-background/90 backdrop-blur-md border-b border-border">
       <div className="max-w-5xl mx-auto px-6 flex items-center justify-between h-16">
         <Link to="/" className="font-display text-lg font-bold text-primary tracking-tight">
-          CST România
+          Predicare expozitivă
         </Link>
 
         {/* Desktop nav */}
