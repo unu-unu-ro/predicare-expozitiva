@@ -7,6 +7,22 @@ import SEOHead from "@/components/SEOHead";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+
+import galleryGroup from "@/assets/gallery/workshop-group-1.jpg";
+import galleryPlenary from "@/assets/gallery/workshop-plenary.jpg";
+import galleryNotes from "@/assets/gallery/workshop-notes.jpg";
+import galleryFellowship from "@/assets/gallery/workshop-fellowship.jpg";
+import galleryBible from "@/assets/gallery/workshop-bible.jpg";
+import galleryWide from "@/assets/gallery/workshop-wide.jpg";
+
+const galleryImages = [
+  { src: galleryGroup, alt: "Lucru în grupuri mici" },
+  { src: galleryPlenary, alt: "Sesiune plenară" },
+  { src: galleryNotes, alt: "Studiu intens în Scriptură" },
+  { src: galleryFellowship, alt: "Părtășie între participanți" },
+  { src: galleryBible, alt: "Biblia și fișa de lucru" },
+  { src: galleryWide, alt: "Privire de ansamblu asupra atelierului" },
+];
 const steps = [
   { num: 1, title: "Structura textuală", desc: "Identifică structura literară și fluxul argumentului în pasaj." },
   { num: 2, title: "Contextul", desc: "Înțelege contextul literar, istoric și teologic al pasajului." },
