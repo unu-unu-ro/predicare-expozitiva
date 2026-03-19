@@ -73,15 +73,15 @@ const ContactPage = () => {
               </div>
               <div className="space-y-2">
                 <Label htmlFor="email">Email *</Label>
-                <Input id="email" type="email" placeholder="adresa@email.com" required />
+                <Input id="email" name="email" type="email" placeholder="adresa@email.com" required />
               </div>
               <div className="space-y-2">
                 <Label htmlFor="phone">Număr de telefon</Label>
-                <Input id="phone" type="tel" placeholder="+40 ..." />
+                <Input id="phone" name="phone" type="tel" placeholder="+40 ..." />
               </div>
               <div className="space-y-2">
                 <Label htmlFor="message">Mesajul tău *</Label>
-                <Textarea id="message" placeholder="Scrie mesajul tău aici..." rows={5} required />
+                <Textarea id="message" name="message" placeholder="Scrie mesajul tău aici..." rows={5} required />
               </div>
               <Button type="submit" disabled={loading} className="w-full bg-primary hover:bg-navy-dark text-primary-foreground font-semibold">
                 {loading ? "Se trimite..." : (
