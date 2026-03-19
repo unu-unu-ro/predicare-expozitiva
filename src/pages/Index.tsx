@@ -98,7 +98,7 @@ const Index = () => {
       </section>
 
       {/* Features strip */}
-      <section className="bg-card py-10">
+      <section className="bg-card section-dots section-vignette py-10">
         <div className="max-w-3xl mx-auto px-5 grid md:grid-cols-3 gap-6">
           {[
             { icon: BookOpen, title: "7 Pași Sistematici", desc: "Metodologie clară de la observare până la schița de predică." },
