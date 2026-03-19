@@ -2,8 +2,8 @@ import { Link } from "react-router-dom";
 
 const SiteFooter = () => (
   <footer className="bg-primary text-primary-foreground">
-    <div className="max-w-5xl mx-auto px-6 py-12">
-      <div className="grid md:grid-cols-3 gap-8">
+    <div className="max-w-3xl mx-auto px-5 py-8">
+      <div className="grid md:grid-cols-3 gap-6">
         <div>
           <h3 className="font-display text-lg font-bold mb-3">
             Ateliere de Predicare Expozitivă
