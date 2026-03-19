@@ -15,15 +15,24 @@ const ContactPage = () => {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
-    // Simulate submission
-    setTimeout(() => {
-      setLoading(false);
+    try {
+      const form = e.currentTarget;
+      const res = await fetch("https://formspree.io/f/xkoqybww", {
+        method: "POST",
+        body: new FormData(form),
+        headers: { Accept: "application/json" },
+      });
+      if (!res.ok) throw new Error("Eroare la trimitere");
       setSubmitted(true);
       toast({ title: "Mesaj trimis!", description: "Vă vom contacta în curând." });
-    }, 1000);
+    } catch {
+      toast({ title: "Eroare", description: "Nu s-a putut trimite mesajul. Încearcă din nou.", variant: "destructive" });
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
