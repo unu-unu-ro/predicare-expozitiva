@@ -8,15 +8,15 @@ import { ArrowRight, BookOpen, Users, MessageSquareQuote } from "lucide-react";
 
 const quotes = [
   {
-    text: "\u201EPune-\u021Bi pe inim\u0103 aceste lucruri, ded\u0103-te \u00EEn totul la ele, pentru ca \u00EEnaintarea ta s\u0103 fie v\u0103zut\u0103 de to\u021Bi.\u201D",
+    text: "„Pune-ți pe inimă aceste lucruri, dedă-te în totul la ele, pentru ca înaintarea ta să fie văzută de toți.”",
     ref: "1 Timotei 4:15",
   },
   {
-    text: "\u201EPe El \u00CEl propov\u0103duim noi, \u0219i sf\u0103tuim pe orice om, \u0219i \u00EEnv\u0103\u021B\u0103m pe orice om \u00EEn toat\u0103 \u00EEn\u021Belepciunea, ca s\u0103 \u00EEnf\u0103\u021Bi\u0219\u0103m pe orice om des\u0103v\u00E2r\u0219it \u00EEn Cristos Isus.\u201D",
+    text: "„Pe El Îl propovăduim noi, și sfătuim pe orice om, și învățăm pe orice om în toată înțelepciunea, ca să înfățișăm pe orice om desăvârșit în Cristos Isus.”",
     ref: "Coloseni 1:28",
   },
   {
-    text: "\u201EToat\u0103 Scriptura este insuflat\u0103 de Dumnezeu \u0219i de folos ca s\u0103 \u00EEnve\u021Be, s\u0103 mustre, s\u0103 \u00EEndrepte, s\u0103 dea \u00EEn\u021Belepciune \u00EEn neprih\u0103nire.\u201D",
+    text: "„Toată Scriptura este insuflată de Dumnezeu și de folos ca să învețe, să mustre, să îndrepte, să dea înțelepciune în neprihănire.”",
     ref: "2 Timotei 3:16",
   },
 ];
