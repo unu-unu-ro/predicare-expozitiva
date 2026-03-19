@@ -2,18 +2,34 @@ import { useState, useEffect, createContext, useContext, ReactNode } from "react
 import { useParams, Link, useLocation } from "react-router-dom";
 import { ArrowLeft, Home } from "lucide-react";
 
-interface EventData {
-  event: {
-    title: string;
-    subtitle: string;
-    details: string;
-  };
-  links: {
-    name: string;
-    url: string;
-    icon: string;
-    active: boolean;
-  }[];
+interface EventLink {
+  name: string;
+  url: string;
+  icon: string;
+  active: boolean;
+}
+
+interface EventMeta {
+  title: string;
+  subtitle: string;
+  details: string;
+}
+
+interface EventEntry {
+  date: string;
+  dateEnd: string;
+  title: string;
+  location: string;
+  type: string;
+  link: string;
+  eventId?: string;
+  event?: EventMeta;
+  links?: EventLink[];
+}
+
+export interface EventData {
+  event: EventMeta;
+  links: EventLink[];
 }
 
 interface EventContextType {
@@ -32,9 +48,14 @@ const EventLayout = ({ children }: { children: ReactNode }) => {
 
   useEffect(() => {
     if (!eventId) return;
-    fetch(`/data/events/${eventId}/data.json`)
+    fetch("/data/evenimente.json")
       .then((r) => r.json())
-      .then(setData)
+      .then((events: EventEntry[]) => {
+        const entry = events.find((e) => e.eventId === eventId);
+        if (entry?.event && entry?.links) {
+          setData({ event: entry.event, links: entry.links });
+        }
+      })
       .catch(() => {});
   }, [eventId]);
 

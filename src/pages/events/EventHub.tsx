@@ -12,22 +12,13 @@ import {
 } from "lucide-react";
 
 const iconMap: Record<string, React.ElementType> = {
-  "fa-solid fa-user-plus": UserPlus,
-  "fa-solid fa-file-alt": FileText,
-  "fa-solid fa-people-group": Users,
-  "fa-solid fa-calendar-days": CalendarDays,
-  "fa-solid fa-book": BookOpen,
-  "fa-solid fa-file-pdf": FileDown,
-  "fa-solid fa-comment": MessageSquare,
-};
-
-const urlMap: Record<string, string> = {
-  participanti: "participanti",
-  grupe: "grupe",
-  orar: "orar",
-  inregistrare: "participanti",
-  feedback: "feedback",
-  handout: "handout",
+  "user-plus": UserPlus,
+  "file-text": FileText,
+  "users": Users,
+  "calendar-days": CalendarDays,
+  "book-open": BookOpen,
+  "file-down": FileDown,
+  "message-square": MessageSquare,
 };
 
 const EventHub = () => {
@@ -49,7 +40,6 @@ const EventHub = () => {
         <div className="bg-card rounded-2xl border border-border shadow-xl overflow-hidden">
           {/* Header area */}
           <div className="px-8 pt-8 pb-5 text-center">
-
             <h1 className="font-display text-xl font-bold text-foreground leading-snug">
               {event.title}
             </h1>
@@ -65,10 +55,10 @@ const EventHub = () => {
               .filter((l) => l.active)
               .map((link, i) => {
                 const Icon = iconMap[link.icon] || FileText;
-                const isExternal = link.url.startsWith("http") || link.url.startsWith("/ghid");
+                const isExternal = link.url.startsWith("http") || link.url.startsWith("/");
                 const to = isExternal
                   ? link.url
-                  : `/events/${eventId}/${urlMap[link.url] || link.url}`;
+                  : `/events/${eventId}/${link.url}`;
 
                 const btnClass =
                   "group flex items-center gap-3 w-full px-5 py-3 rounded-xl bg-primary text-primary-foreground font-semibold text-sm hover:bg-navy-dark transition-all hover:shadow-md";
@@ -81,10 +71,17 @@ const EventHub = () => {
                     transition={{ delay: 0.15 + i * 0.05, duration: 0.3 }}
                   >
                     {isExternal ? (
-                      <a href={to} className={btnClass}>
-                        <Icon size={18} className="opacity-80" />
-                        <span>{link.name.trim()}</span>
-                      </a>
+                      link.url.startsWith("http") ? (
+                        <a href={link.url} className={btnClass} target="_blank" rel="noopener noreferrer">
+                          <Icon size={18} className="opacity-80" />
+                          <span>{link.name.trim()}</span>
+                        </a>
+                      ) : (
+                        <Link to={link.url} className={btnClass}>
+                          <Icon size={18} className="opacity-80" />
+                          <span>{link.name.trim()}</span>
+                        </Link>
+                      )
                     ) : (
                       <Link to={to} className={btnClass}>
                         <Icon size={18} className="opacity-80" />
@@ -106,7 +103,7 @@ const EventHub = () => {
             ← Înapoi la site
           </Link>
           <div className="text-[10px] text-muted-foreground/50">
-            © {new Date().getFullYear()} CST Biserica Unu-Unu, Cluj-Napoca 🤍
+            © {new Date().getFullYear()} CST România 🤍
           </div>
         </div>
       </motion.div>
