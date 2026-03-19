@@ -1,3 +1,4 @@
+import { useState, useEffect, useCallback } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import Layout from "@/components/Layout";
@@ -5,7 +6,7 @@ import HeroBanner from "@/components/HeroBanner";
 import SEOHead from "@/components/SEOHead";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
-
+import { ChevronLeft, ChevronRight } from "lucide-react";
 const steps = [
   { num: 1, title: "Structura textuală", desc: "Identifică structura literară și fluxul argumentului în pasaj." },
   { num: 2, title: "Contextul", desc: "Înțelege contextul literar, istoric și teologic al pasajului." },
