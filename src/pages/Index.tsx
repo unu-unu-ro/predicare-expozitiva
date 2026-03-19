@@ -62,18 +62,23 @@ const Index = () => {
           className="space-y-5"
         >
           <motion.div custom={0} variants={fadeUp}>
-            <h2 className="section-title">Predicare mai bună pretutindeni</h2>
+            <h2 className="section-title">Predicare fidelă Scripturii</h2>
             <div className="gold-divider mt-4" />
           </motion.div>
 
           <motion.div custom={1} variants={fadeUp} className="space-y-4 text-muted-foreground leading-relaxed">
             <p>
-              <a href="https://simeontrust.org/" target="_blank" rel="noopener noreferrer" className="text-primary font-semibold hover:underline underline-offset-2">
+              <a
+                href="https://simeontrust.org/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-primary font-semibold hover:underline underline-offset-2"
+              >
                 Charles Simeon Trust
               </a>{" "}
               a fost fondat pentru a promova creșterea Evangheliei lui Isus Cristos în întreaga lume prin formarea
-              următoarei generații de predicatori expozitivi. Scopul atelierelor este de a crește încrederea și abilitatea
-              fiecărui participant de a mânui corect Cuvântul lui Dumnezeu.
+              următoarei generații de predicatori expozitivi. Scopul atelierelor este de a crește încrederea și
+              abilitatea fiecărui participant de a mânui corect Cuvântul lui Dumnezeu.
             </p>
             <p>
               Organizăm aceste ateliere în România în parteneriat cu Charles Simeon Trust, folosind integral metoda și
@@ -88,10 +93,13 @@ const Index = () => {
                 Află mai multe <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </Button>
-            <Button asChild variant="outline" size="lg" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground font-semibold">
-              <Link to="/evenimente">
-                Vezi evenimentele
-              </Link>
+            <Button
+              asChild
+              variant="outline"
+              size="lg"
+              className="border-primary text-primary hover:bg-primary hover:text-primary-foreground font-semibold"
+            >
+              <Link to="/evenimente">Vezi evenimentele</Link>
             </Button>
           </motion.div>
         </motion.div>
@@ -101,9 +109,17 @@ const Index = () => {
       <section className="bg-card section-dots section-vignette py-10">
         <div className="max-w-3xl mx-auto px-5 grid md:grid-cols-3 gap-6">
           {[
-            { icon: BookOpen, title: "7 Pași Sistematici", desc: "Metodologie clară de la observare până la schița de predică." },
+            {
+              icon: BookOpen,
+              title: "7 Pași Sistematici",
+              desc: "Metodologie clară de la observare până la schița de predică.",
+            },
             { icon: Users, title: "Grupuri Mici", desc: "Lucru practic cu feedback de la lideri experimentați." },
-            { icon: MessageSquareQuote, title: "Sesiuni Plenare", desc: "Predici model, demonstrații și sesiuni de Q&A." },
+            {
+              icon: MessageSquareQuote,
+              title: "Sesiuni Plenare",
+              desc: "Predici model, demonstrații și sesiuni de Q&A.",
+            },
           ].map((item, i) => (
             <motion.div
               key={item.title}
@@ -138,9 +154,7 @@ const Index = () => {
               {quotes[quoteIndex].text}
             </p>
             <div className="w-12 h-px bg-accent mx-auto my-4" />
-            <p className="text-sm font-semibold text-accent tracking-widest uppercase">
-              {quotes[quoteIndex].ref}
-            </p>
+            <p className="text-sm font-semibold text-accent tracking-widest uppercase">{quotes[quoteIndex].ref}</p>
           </motion.div>
           <div className="flex gap-2 mt-6">
             {quotes.map((_, i) => (
