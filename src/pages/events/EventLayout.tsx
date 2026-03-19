@@ -57,7 +57,12 @@ const EventLayout = ({ children }: { children: ReactNode }) => {
       .then((events: EventEntry[]) => {
         const entry = events.find((e) => e.eventId === eventId);
         if (entry?.event && entry?.links) {
-          setData({ event: entry.event, links: entry.links });
+          setData({
+            event: entry.event,
+            links: entry.links,
+            urlInregistrare: entry.urlInregistrare,
+            urlFeedback: entry.urlFeedback,
+          });
         }
       })
       .catch(() => {});
