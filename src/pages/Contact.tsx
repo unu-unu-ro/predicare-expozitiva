@@ -68,7 +68,7 @@ const ContactPage = () => {
                 <Label htmlFor="message">Mesajul tău *</Label>
                 <Textarea id="message" placeholder="Scrie mesajul tău aici..." rows={5} required />
               </div>
-              <Button type="submit" disabled={loading} className="w-full bg-primary hover:bg-teal-dark text-primary-foreground font-semibold">
+              <Button type="submit" disabled={loading} className="w-full bg-primary hover:bg-navy-dark text-primary-foreground font-semibold">
                 {loading ? "Se trimite..." : (
                   <>Trimite mesajul <Send className="ml-2 h-4 w-4" /></>
                 )}

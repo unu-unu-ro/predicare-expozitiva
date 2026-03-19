@@ -77,7 +77,7 @@ const Index = () => {
           </motion.div>
 
           <motion.div custom={2} variants={fadeUp} className="flex flex-wrap gap-4 pt-2">
-            <Button asChild size="lg" className="bg-primary hover:bg-teal-dark text-primary-foreground font-semibold">
+            <Button asChild size="lg" className="bg-primary hover:bg-navy-dark text-primary-foreground font-semibold">
               <Link to="/despre">
                 Află mai multe <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
@@ -130,8 +130,8 @@ const Index = () => {
             <p className="font-display italic text-lg md:text-xl text-cream/90 leading-relaxed">
               {quotes[quoteIndex].text}
             </p>
-            <div className="w-12 h-px bg-gold mx-auto my-4" />
-            <p className="text-sm font-semibold text-gold tracking-widest uppercase">
+            <div className="w-12 h-px bg-accent mx-auto my-4" />
+            <p className="text-sm font-semibold text-accent tracking-widest uppercase">
               {quotes[quoteIndex].ref}
             </p>
           </motion.div>
@@ -140,7 +140,7 @@ const Index = () => {
               <button
                 key={i}
                 onClick={() => setQuoteIndex(i)}
-                className={`w-2 h-2 rounded-full transition-all ${i === quoteIndex ? "bg-gold w-6" : "bg-cream/30"}`}
+                className={`w-2 h-2 rounded-full transition-all ${i === quoteIndex ? "bg-accent w-6" : "bg-cream/30"}`}
                 aria-label={`Citat ${i + 1}`}
               />
             ))}
