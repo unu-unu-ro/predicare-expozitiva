@@ -15,7 +15,7 @@ export default {
     extend: {
       fontFamily: {
         display: ['"Playfair Display"', 'Georgia', 'serif'],
-        body: ['"Source Sans 3"', 'system-ui', 'sans-serif'],
+        body: ['"Inter"', 'system-ui', 'sans-serif'],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -61,10 +61,10 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
-        gold: "hsl(var(--gold))",
-        "gold-light": "hsl(var(--gold-light))",
-        "teal-dark": "hsl(var(--teal-dark))",
-        "teal-light": "hsl(var(--teal-light))",
+        copper: "hsl(var(--copper))",
+        "copper-light": "hsl(var(--copper-light))",
+        "navy-dark": "hsl(var(--navy-dark))",
+        "navy-light": "hsl(var(--navy-light))",
         "warm-bg": "hsl(var(--warm-bg))",
         cream: "hsl(var(--cream))",
       },
