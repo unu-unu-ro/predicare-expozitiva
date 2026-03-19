@@ -62,10 +62,11 @@ const EventHub = () => {
               .filter((l) => l.active)
               .map((link, i) => {
                 const Icon = iconMap[link.icon] || FileText;
-                const isExternal = link.url.startsWith("http") || link.url.startsWith("/");
+                const resolved = resolveUrl(link.url);
+                const isExternal = resolved.startsWith("http") || resolved.startsWith("/");
                 const to = isExternal
-                  ? link.url
-                  : `/events/${eventId}/${link.url}`;
+                  ? resolved
+                  : `/events/${eventId}/${resolved}`;
 
                 const btnClass =
                   "group flex items-center gap-3 w-full px-5 py-3 rounded-xl bg-primary text-primary-foreground font-semibold text-sm hover:bg-navy-dark transition-all hover:shadow-md";
