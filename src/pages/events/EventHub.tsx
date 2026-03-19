@@ -49,32 +49,6 @@ const EventHub = () => {
         <div className="bg-card rounded-2xl border border-border shadow-xl overflow-hidden">
           {/* Header area */}
           <div className="px-8 pt-8 pb-5 text-center">
-            {/* Logos row */}
-            <div className="flex items-center justify-center gap-5 mb-5">
-              <div className="text-center leading-tight">
-                <span className="font-display text-[13px] font-semibold text-foreground tracking-tight">
-                  ✦ Biserica
-                </span>
-                <br />
-                <span className="font-display text-[13px] text-foreground">
-                  Unu<em className="text-accent not-italic font-semibold">Unu</em>
-                </span>
-              </div>
-              <div className="w-px h-8 bg-border" />
-              <div className="text-center leading-tight">
-                <span className="text-[9px] uppercase tracking-[0.15em] text-muted-foreground font-medium">
-                  The Charles
-                </span>
-                <br />
-                <span className="font-display text-[15px] font-bold text-primary tracking-wide">
-                  SIMEON
-                </span>
-                <br />
-                <span className="text-[9px] uppercase tracking-[0.15em] text-muted-foreground font-medium">
-                  Trust
-                </span>
-              </div>
-            </div>
 
             <h1 className="font-display text-xl font-bold text-foreground leading-snug">
               {event.title}
