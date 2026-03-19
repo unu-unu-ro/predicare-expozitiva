@@ -31,20 +31,16 @@ const steps = [
 
 const testimonials = [
   {
-    text: "Atelierul m-a ajutat să înțeleg cât de important este să las textul biblic să vorbească, nu să impun propriile mele idei asupra lui. Am plecat cu o metodologie clară pe care o aplic în fiecare predică.",
-    author: "Participant",
+    text: "Puține resurse au capacitatea de a-i forma atât pe cei mai puțin experimentați, cât și pe cei avansați. Workshopurile CST reușesc acest lucru printr-o experiență unică și profund matură. Cu fiecare participare am plecat îmbogățit și, indiferent de nivelul la care mă aflam, am simțit că instrumentele mele hermeneutice au devenit mai ascuțite. Am fost în mod special încurajat de accentul puternic pus pe autoritatea și suficiența Scripturii, precum și de seriozitatea cu care este tratat textul biblic. Workshopurile CST sunt genul de experiență pe care o poți recomanda oricui, fără rezerve.",
+    author: "Todi Croitoru",
   },
   {
-    text: "Lucrul în grupuri mici a fost transformator. Feedback-ul primit de la colegii și liderul de grup m-a ajutat să văd punctele în care trebuie să cresc.",
-    author: "Participant, Cluj 2025",
+    text: "Participarea la seminariile CST, la Brăila, au însemnat pentru mine zile binecuvântate de instruire pentru slujire. Accentul clar pus pe textul Scripturii, predicile coerente și cu ungere din sesiunile plenare, predarea clară a uneltelor, grupurile mici în care am primit feedback pentru munca mea si am putut interacționa cu colegii— toate acestea fac din CST un context de instruire de care sper să aibă parte cât mai mulți slujitori ai Cuvântului din România.",
+    author: "Pavel Trifu",
   },
   {
-    text: "Am participat la mai multe ateliere și de fiecare dată plec cu ceva nou. Comunitatea de predicatori care se formează în jurul acestor ateliere este o binecuvântare reală.",
-    author: "Participant",
-  },
-  {
-    text: "Ca lider de studiu biblic, credeam că nu am nevoie de formare suplimentară. Acest atelier mi-a arătat câte lucruri puteam face mai bine. Recomand cu căldură!",
-    author: "Participant",
+    text: "CST nu este un simplu seminar, este o echipare necesară pentru toți care știu că mai au de învățat. În urma participării, am plecat cu foarte multe instrumente care îmi simplifică modul de analizare a unui pasaj. CST te scoate din amorțeală și te pune serios la treabă. Pentru mine a fost un seminar extrem de util și, odată cu participarea, mi-am însușit și deja mă folosesc de toate instrumentele pentru a transmite mesajul fără a adăuga sau scoate după propria interpretare. Instrumentele învățate în cadrul CST sunt asemenea unei perechi de ochelari care înlătură ceața și îți aduce claritate în vedere.",
+    author: "Ruben Bratu",
   },
 ];
 
