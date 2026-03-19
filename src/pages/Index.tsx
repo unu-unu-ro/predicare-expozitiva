@@ -53,7 +53,7 @@ const Index = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-50px" }}
-          className="space-y-8"
+          className="space-y-5"
         >
           <motion.div custom={0} variants={fadeUp}>
             <h2 className="section-title">Predicare mai bună pretutindeni</h2>
@@ -92,8 +92,8 @@ const Index = () => {
       </section>
 
       {/* Features strip */}
-      <section className="bg-card py-16">
-        <div className="max-w-4xl mx-auto px-6 grid md:grid-cols-3 gap-8">
+      <section className="bg-card py-10">
+        <div className="max-w-3xl mx-auto px-5 grid md:grid-cols-3 gap-6">
           {[
             { icon: BookOpen, title: "7 Pași Sistematici", desc: "Metodologie clară de la observare până la schița de predică." },
             { icon: Users, title: "Grupuri Mici", desc: "Lucru practic cu feedback de la lideri experimentați." },
@@ -118,8 +118,8 @@ const Index = () => {
       </section>
 
       {/* Scripture Carousel */}
-      <section className="bg-primary py-16">
-        <div className="max-w-3xl mx-auto px-6 text-center min-h-[140px] flex flex-col items-center justify-center">
+      <section className="bg-primary py-10">
+        <div className="max-w-3xl mx-auto px-5 text-center min-h-[120px] flex flex-col items-center justify-center">
           <motion.div
             key={quoteIndex}
             initial={{ opacity: 0, y: 10 }}
