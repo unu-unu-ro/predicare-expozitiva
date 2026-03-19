@@ -30,6 +30,11 @@ const GhidPage = () => {
 
   return (
     <Layout>
+      <SEOHead
+        title="Ghid de Pregătire"
+        description="Ghid complet pentru pregătirea fișei de lucru: structură, context, ideea centrală, legătura cu Evanghelia, aplicații și schița predicii."
+        path="/ghid"
+      />
       <HeroBanner title="Ghid de Pregătire" subtitle="Ghid de Pregătire a Fișei de Lucru" />
 
       <section className="page-section">

@@ -69,6 +69,11 @@ const sections = [
 
 const ResursePage = () => (
   <Layout>
+    <SEOHead
+      title="Resurse"
+      description="Ghiduri, podcasturi și materiale utile pentru predicarea expozitivă. Resurse de la Charles Simeon Trust și parteneri."
+      path="/resurse"
+    />
     <HeroBanner title="Resurse" subtitle="Materiale utile pentru predicarea expozitivă." />
 
     <section className="page-section space-y-12">

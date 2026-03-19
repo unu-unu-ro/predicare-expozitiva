@@ -28,6 +28,11 @@ const ContactPage = () => {
 
   return (
     <Layout>
+      <SEOHead
+        title="Contact"
+        description="Contactează echipa CST România pentru întrebări despre atelierele de predicare expozitivă, înscrieri sau parteneriate."
+        path="/contact"
+      />
       <HeroBanner title="Contact" subtitle="Contactează-ne pentru mai multe informații despre ateliere." />
 
       <section className="page-section">

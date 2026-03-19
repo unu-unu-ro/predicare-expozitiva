@@ -43,6 +43,11 @@ const Index = () => {
 
   return (
     <Layout>
+      <SEOHead
+        title="Ateliere de Predicare Expozitivă"
+        description="Ateliere de predicare expozitivă în România, în parteneriat cu Charles Simeon Trust. Formăm predicatori care mânuiesc drept Cuvântul adevărului."
+        path="/"
+      />
       <HeroBanner
         title="Ateliere de Predicare Expozitivă"
         subtitle="Rămâneți conectat cu atelierele și resursele Charles Simeon Trust în România."

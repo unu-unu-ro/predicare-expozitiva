@@ -30,6 +30,11 @@ const testimonials = [
 
 const DespreePage = () => (
   <Layout>
+    <SEOHead
+      title="Despre Ateliere"
+      description="Descoperă ce este un Atelier de Predicare Expozitivă, metodologia în 7 pași și cum te poți implica în formarea predicatorilor din România."
+      path="/despre"
+    />
     <HeroBanner title="Despre Ateliere" subtitle="Ce este un Atelier de Predicare Expozitivă?" />
 
     <section className="page-section space-y-6">

@@ -156,6 +156,11 @@ const FisaPage = () => {
 
   return (
     <Layout>
+      <SEOHead
+        title="Fișa de Lucru"
+        description="Completează fișa de lucru interactivă pentru pregătirea predicii expozitive: structură, context, ideea centrală și schița predicii."
+        path="/fisa"
+      />
       <HeroBanner
         title="Fișa de Lucru"
         subtitle="Completează online cei 7 pași și generează PDF"
