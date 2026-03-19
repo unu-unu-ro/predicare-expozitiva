@@ -92,8 +92,8 @@ const Index = () => {
       </section>
 
       {/* Features strip */}
-      <section className="bg-card py-16">
-        <div className="max-w-4xl mx-auto px-6 grid md:grid-cols-3 gap-8">
+      <section className="bg-card py-10">
+        <div className="max-w-3xl mx-auto px-5 grid md:grid-cols-3 gap-6">
           {[
             { icon: BookOpen, title: "7 Pași Sistematici", desc: "Metodologie clară de la observare până la schița de predică." },
             { icon: Users, title: "Grupuri Mici", desc: "Lucru practic cu feedback de la lideri experimentați." },
