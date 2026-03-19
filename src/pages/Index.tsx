@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import Layout from "@/components/Layout";
+import SEOHead from "@/components/SEOHead";
 import HeroBanner from "@/components/HeroBanner";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, BookOpen, Users, MessageSquareQuote } from "lucide-react";
