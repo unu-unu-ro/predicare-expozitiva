@@ -7,7 +7,7 @@ interface HeroBannerProps {
 }
 
 const HeroBanner = ({ title, subtitle }: HeroBannerProps) => (
-  <div className="relative h-[320px] md:h-[400px] flex items-center justify-center overflow-hidden">
+  <div className="relative h-[180px] md:h-[220px] flex items-center justify-center overflow-hidden">
     <img
       src={heroBg}
       alt=""
