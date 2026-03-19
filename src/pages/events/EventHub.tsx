@@ -9,6 +9,7 @@ import {
   BookOpen,
   MessageSquare,
   FileDown,
+  ChevronRight,
 } from "lucide-react";
 
 const iconMap: Record<string, React.ElementType> = {
@@ -38,76 +39,101 @@ const EventHub = () => {
   const { event, links } = data;
 
   return (
-    <div className="min-h-[85vh] flex items-center justify-center px-4 py-8">
+    <div className="min-h-screen bg-foreground flex flex-col items-center justify-center px-4 py-12">
+      {/* Hero section */}
       <motion.div
-        initial={{ opacity: 0, y: 20 }}
+        initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-        className="w-full max-w-sm"
+        transition={{ duration: 0.7, ease: "easeOut" }}
+        className="text-center mb-12 max-w-lg"
       >
-        {/* Card */}
-        <div className="bg-card rounded-2xl border border-border shadow-xl overflow-hidden">
-          {/* Header area */}
-          <div className="px-8 pt-8 pb-5 text-center">
-
-            <h1 className="font-display text-xl font-bold text-foreground leading-snug">
-              {event.title}
-            </h1>
-            <p className="font-display text-sm font-semibold text-muted-foreground mt-0.5">
-              {event.subtitle}
-            </p>
-            <p className="text-xs text-muted-foreground mt-1.5">{event.details}</p>
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ delay: 0.2, duration: 0.5 }}
+          className="inline-block mb-8"
+        >
+          <div className="w-16 h-16 rounded-full border-2 border-gold/40 flex items-center justify-center mx-auto">
+            <BookOpen className="w-7 h-7 text-gold" />
           </div>
+        </motion.div>
 
-          {/* Links */}
-          <div className="px-5 pb-6 space-y-2.5">
-            {links
-              .filter((l) => l.active)
-              .map((link, i) => {
-                const Icon = iconMap[link.icon] || FileText;
-                const isExternal = link.url.startsWith("http") || link.url.startsWith("/ghid");
-                const to = isExternal
-                  ? link.url
-                  : `/events/${eventId}/${urlMap[link.url] || link.url}`;
+        <h1 className="font-display text-3xl md:text-4xl font-bold text-primary-foreground leading-tight tracking-tight">
+          {event.title}
+        </h1>
+        <p className="font-display text-lg md:text-xl font-semibold text-gold mt-3">
+          {event.subtitle}
+        </p>
+        <p className="text-sm text-primary-foreground/60 mt-3 tracking-wide">
+          {event.details}
+        </p>
+      </motion.div>
 
-                const btnClass =
-                  "group flex items-center gap-3 w-full px-5 py-3 rounded-xl bg-primary text-primary-foreground font-semibold text-sm hover:bg-teal-dark transition-all hover:shadow-md";
+      {/* Navigation links */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.4, duration: 0.5 }}
+        className="w-full max-w-sm space-y-3"
+      >
+        {links
+          .filter((l) => l.active)
+          .map((link, i) => {
+            const Icon = iconMap[link.icon] || FileText;
+            const isExternal = link.url.startsWith("http") || link.url.startsWith("/ghid");
+            const to = isExternal
+              ? link.url
+              : `/events/${eventId}/${urlMap[link.url] || link.url}`;
 
-                return (
-                  <motion.div
-                    key={link.name}
-                    initial={{ opacity: 0, x: -10 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: 0.15 + i * 0.05, duration: 0.3 }}
-                  >
-                    {isExternal ? (
-                      <a href={to} className={btnClass}>
-                        <Icon size={18} className="opacity-80" />
-                        <span>{link.name.trim()}</span>
-                      </a>
-                    ) : (
-                      <Link to={to} className={btnClass}>
-                        <Icon size={18} className="opacity-80" />
-                        <span>{link.name.trim()}</span>
-                      </Link>
-                    )}
-                  </motion.div>
-                );
-              })}
-          </div>
-        </div>
+            const content = (
+              <>
+                <span className="flex items-center gap-3">
+                  <Icon size={18} className="opacity-70" />
+                  <span>{link.name.trim()}</span>
+                </span>
+                <ChevronRight size={16} className="opacity-40 group-hover:opacity-80 transition-opacity" />
+              </>
+            );
 
-        {/* Footer beneath card */}
-        <div className="text-center mt-5 space-y-1">
-          <Link
-            to="/evenimente"
-            className="text-xs text-muted-foreground hover:text-primary transition-colors"
-          >
-            ← Înapoi la site
-          </Link>
-          <div className="text-[10px] text-muted-foreground/50">
-            © {new Date().getFullYear()} CST Biserica Unu-Unu, Cluj-Napoca 🤍
-          </div>
+            const btnClass =
+              "group flex items-center justify-between w-full px-5 py-3.5 rounded-lg bg-primary-foreground/10 text-primary-foreground font-medium text-sm border border-primary-foreground/10 hover:bg-gold hover:text-foreground hover:border-gold transition-all duration-200";
+
+            return (
+              <motion.div
+                key={link.name}
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.5 + i * 0.07, duration: 0.3 }}
+              >
+                {isExternal ? (
+                  <a href={to} className={btnClass}>
+                    {content}
+                  </a>
+                ) : (
+                  <Link to={to} className={btnClass}>
+                    {content}
+                  </Link>
+                )}
+              </motion.div>
+            );
+          })}
+      </motion.div>
+
+      {/* Footer */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.9, duration: 0.5 }}
+        className="text-center mt-14 space-y-2"
+      >
+        <Link
+          to="/evenimente"
+          className="text-xs text-primary-foreground/40 hover:text-gold transition-colors tracking-wide uppercase"
+        >
+          ← Înapoi la site
+        </Link>
+        <div className="text-[10px] text-primary-foreground/25">
+          © {new Date().getFullYear()} CST · Cluj-Napoca
         </div>
       </motion.div>
     </div>
