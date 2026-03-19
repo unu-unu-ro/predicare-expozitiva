@@ -38,64 +38,102 @@ const EventHub = () => {
   const { event, links } = data;
 
   return (
-    <div className="min-h-[80vh] flex items-center justify-center px-4 py-10">
+    <div className="min-h-[85vh] flex items-center justify-center px-4 py-8">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        className="w-full max-w-md bg-card rounded-2xl border border-border shadow-lg p-8 text-center"
+        className="w-full max-w-sm"
       >
-        <h1 className="font-display text-2xl font-bold text-foreground mb-1">
-          {event.title}
-        </h1>
-        <p className="font-display text-base font-semibold text-muted-foreground">
-          {event.subtitle}
-        </p>
-        <p className="text-sm text-muted-foreground mt-1 mb-6">{event.details}</p>
+        {/* Card */}
+        <div className="bg-card rounded-2xl border border-border shadow-xl overflow-hidden">
+          {/* Header area */}
+          <div className="px-8 pt-8 pb-5 text-center">
+            {/* Logos row */}
+            <div className="flex items-center justify-center gap-5 mb-5">
+              <div className="text-center leading-tight">
+                <span className="font-display text-[13px] font-semibold text-foreground tracking-tight">
+                  ✦ Biserica
+                </span>
+                <br />
+                <span className="font-display text-[13px] text-foreground">
+                  Unu<em className="text-accent not-italic font-semibold">Unu</em>
+                </span>
+              </div>
+              <div className="w-px h-8 bg-border" />
+              <div className="text-center leading-tight">
+                <span className="text-[9px] uppercase tracking-[0.15em] text-muted-foreground font-medium">
+                  The Charles
+                </span>
+                <br />
+                <span className="font-display text-[15px] font-bold text-primary tracking-wide">
+                  SIMEON
+                </span>
+                <br />
+                <span className="text-[9px] uppercase tracking-[0.15em] text-muted-foreground font-medium">
+                  Trust
+                </span>
+              </div>
+            </div>
 
-        <div className="space-y-3">
-          {links
-            .filter((l) => l.active)
-            .map((link, i) => {
-              const Icon = iconMap[link.icon] || FileText;
-              const isExternal = link.url.startsWith("http") || link.url.startsWith("/ghid");
-              const to = isExternal
-                ? link.url
-                : `/events/${eventId}/${urlMap[link.url] || link.url}`;
+            <h1 className="font-display text-xl font-bold text-foreground leading-snug">
+              {event.title}
+            </h1>
+            <p className="font-display text-sm font-semibold text-muted-foreground mt-0.5">
+              {event.subtitle}
+            </p>
+            <p className="text-xs text-muted-foreground mt-1.5">{event.details}</p>
+          </div>
 
-              const className =
-                "group flex items-center gap-4 w-full px-5 py-3.5 rounded-xl bg-primary text-primary-foreground font-semibold text-sm hover:bg-teal-dark transition-colors";
+          {/* Links */}
+          <div className="px-5 pb-6 space-y-2.5">
+            {links
+              .filter((l) => l.active)
+              .map((link, i) => {
+                const Icon = iconMap[link.icon] || FileText;
+                const isExternal = link.url.startsWith("http") || link.url.startsWith("/ghid");
+                const to = isExternal
+                  ? link.url
+                  : `/events/${eventId}/${urlMap[link.url] || link.url}`;
 
-              return (
-                <motion.div
-                  key={link.name}
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.1 + i * 0.06, duration: 0.3 }}
-                >
-                  {isExternal ? (
-                    <a href={to} className={className}>
-                      <Icon size={20} />
-                      <span>{link.name.trim()}</span>
-                    </a>
-                  ) : (
-                    <Link to={to} className={className}>
-                      <Icon size={20} />
-                      <span>{link.name.trim()}</span>
-                    </Link>
-                  )}
-                </motion.div>
-              );
-            })}
+                const btnClass =
+                  "group flex items-center gap-3 w-full px-5 py-3 rounded-xl bg-primary text-primary-foreground font-semibold text-sm hover:bg-teal-dark transition-all hover:shadow-md";
+
+                return (
+                  <motion.div
+                    key={link.name}
+                    initial={{ opacity: 0, x: -10 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: 0.15 + i * 0.05, duration: 0.3 }}
+                  >
+                    {isExternal ? (
+                      <a href={to} className={btnClass}>
+                        <Icon size={18} className="opacity-80" />
+                        <span>{link.name.trim()}</span>
+                      </a>
+                    ) : (
+                      <Link to={to} className={btnClass}>
+                        <Icon size={18} className="opacity-80" />
+                        <span>{link.name.trim()}</span>
+                      </Link>
+                    )}
+                  </motion.div>
+                );
+              })}
+          </div>
         </div>
 
-        <div className="mt-8">
+        {/* Footer beneath card */}
+        <div className="text-center mt-5 space-y-1">
           <Link
             to="/evenimente"
-            className="text-sm text-muted-foreground hover:text-primary transition-colors"
+            className="text-xs text-muted-foreground hover:text-primary transition-colors"
           >
-            ← Înapoi la Evenimente
+            ← Înapoi la site
           </Link>
+          <div className="text-[10px] text-muted-foreground/50">
+            © {new Date().getFullYear()} CST Biserica Unu-Unu, Cluj-Napoca 🤍
+          </div>
         </div>
       </motion.div>
     </div>
