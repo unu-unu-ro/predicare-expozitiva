@@ -44,6 +44,73 @@ const testimonials = [
   },
 ];
 
+const TestimonialCarousel = () => {
+  const [current, setCurrent] = useState(0);
+  const total = testimonials.length;
+
+  const goTo = useCallback((index: number) => {
+    setCurrent(((index % total) + total) % total);
+  }, [total]);
+
+  useEffect(() => {
+    const timer = setInterval(() => goTo(current + 1), 7000);
+    return () => clearInterval(timer);
+  }, [current, goTo]);
+
+  return (
+    <div className="relative">
+      <div className="overflow-hidden rounded-lg">
+        <div
+          className="flex transition-transform duration-500 ease-in-out"
+          style={{ transform: `translateX(-${current * 100}%)` }}
+        >
+          {testimonials.map((t, i) => (
+            <blockquote
+              key={i}
+              className="min-w-full px-1 box-border"
+            >
+              <div className="bg-card rounded-lg p-6 border border-border">
+                <p className="text-sm sm:text-base text-muted-foreground italic leading-relaxed">„{t.text}"</p>
+                <footer className="mt-4 text-sm font-semibold text-accent">— {t.author}</footer>
+              </div>
+            </blockquote>
+          ))}
+        </div>
+      </div>
+
+      {/* Navigation */}
+      <div className="flex items-center justify-center gap-4 mt-4">
+        <button
+          onClick={() => goTo(current - 1)}
+          className="p-2 rounded-full bg-muted hover:bg-accent/20 text-foreground transition-colors"
+          aria-label="Testimonial anterior"
+        >
+          <ChevronLeft className="w-5 h-5" />
+        </button>
+        <div className="flex gap-2">
+          {testimonials.map((_, i) => (
+            <button
+              key={i}
+              onClick={() => setCurrent(i)}
+              className={`w-2.5 h-2.5 rounded-full transition-colors ${
+                i === current ? "bg-accent" : "bg-muted-foreground/30"
+              }`}
+              aria-label={`Testimonial ${i + 1}`}
+            />
+          ))}
+        </div>
+        <button
+          onClick={() => goTo(current + 1)}
+          className="p-2 rounded-full bg-muted hover:bg-accent/20 text-foreground transition-colors"
+          aria-label="Testimonial următor"
+        >
+          <ChevronRight className="w-5 h-5" />
+        </button>
+      </div>
+    </div>
+  );
+};
+
 const DespreePage = () => (
   <Layout>
     <SEOHead
