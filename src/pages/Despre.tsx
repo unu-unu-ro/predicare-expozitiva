@@ -251,6 +251,32 @@ const DespreePage = () => (
         </AccordionItem>
       </Accordion>
 
+      {/* Photo Gallery — infinite marquee */}
+      <div className="mt-12 mb-2">
+        <h3 className="section-subtitle text-center mb-6">Momente din ateliere</h3>
+        <div className="relative overflow-hidden rounded-xl">
+          {/* fade edges */}
+          <div className="pointer-events-none absolute inset-y-0 left-0 w-12 sm:w-20 z-10 bg-gradient-to-r from-background to-transparent" />
+          <div className="pointer-events-none absolute inset-y-0 right-0 w-12 sm:w-20 z-10 bg-gradient-to-l from-background to-transparent" />
+
+          <div className="flex gap-4 animate-marquee hover:[animation-play-state:paused]">
+            {[...galleryImages, ...galleryImages].map((img, i) => (
+              <div
+                key={i}
+                className="flex-shrink-0 w-56 sm:w-72 aspect-[4/3] rounded-lg overflow-hidden"
+              >
+                <img
+                  src={img.src}
+                  alt={img.alt}
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                  loading="lazy"
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
       {/* CTA */}
       <div className="bg-card section-dots section-vignette rounded-xl p-8 text-center border border-border mt-8">
         <h3 className="section-subtitle mb-4">Vrei să participi?</h3>
