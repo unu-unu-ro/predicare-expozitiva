@@ -26,7 +26,14 @@ const EventHub = () => {
 
   if (!data) return null;
 
-  const { event, links } = data;
+  const { event, links, urlInregistrare, urlFeedback } = data;
+
+  // Resolve $inregistrare / $feedback placeholders to actual URLs
+  const resolveUrl = (url: string): string => {
+    if (url === "$inregistrare") return urlInregistrare || "#";
+    if (url === "$feedback") return urlFeedback || "#";
+    return url;
+  };
 
   return (
     <div className="min-h-[85vh] flex items-center justify-center px-4 py-8">
