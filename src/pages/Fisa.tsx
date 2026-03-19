@@ -78,12 +78,42 @@ const FisaPage = () => {
     }
   };
 
+  // Mapping between original JSON keys and internal form keys
+  const originalToInternal: Record<string, keyof FormData> = {
+    "structura-sectiuni": "s1a",
+    "structura-strategii": "s1b",
+    "structura-accent": "s1c",
+    "context-literar": "s2a",
+    "context-istoric": "s2b",
+    "context-cultural": "s2c",
+    "context-biblic": "s2d",
+    "ideea-autorului": "s3",
+    "legatura-evanghelia": "s4",
+    "ideea-mea": "s5",
+    "aplicatii-mantuiti": "s6a",
+    "aplicatii-nemantuiti": "s6b",
+    "titlu-predica": "s7titlu",
+    "schita-mesaj": "s7schita",
+  };
+
+  const internalToOriginal: Record<string, string> = Object.fromEntries(
+    Object.entries(originalToInternal).map(([k, v]) => [v, k])
+  );
+
   const handleDownloadJSON = () => {
-    const blob = new Blob([JSON.stringify(form, null, 2)], { type: "application/json" });
+    const exportData: Record<string, string> = {
+      nume: form.nume,
+      text: form.text,
+    };
+    for (const [internal, original] of Object.entries(internalToOriginal)) {
+      exportData[original] = form[internal as keyof FormData];
+    }
+    exportData.date = new Date().toISOString();
+    const blob = new Blob([JSON.stringify(exportData, null, 2)], { type: "application/json" });
     const url = URL.createObjectURL(blob);
     const a = document.createElement("a");
     a.href = url;
-    a.download = "fisa-raw.json";
+    a.download = `${form.nume || "fisa"}_-_${form.text || "text"}_-_raw.json`.replace(/\s+/g, "_");
     a.click();
     URL.revokeObjectURL(url);
   };
@@ -98,7 +128,18 @@ const FisaPage = () => {
       try {
         const text = await file.text();
         const data = JSON.parse(text);
-        setForm({ ...emptyForm, ...data });
+        const mapped: FormData = { ...emptyForm };
+        // Map original keys to internal keys
+        mapped.nume = data.nume || "";
+        mapped.text = data.text || "";
+        for (const [origKey, intKey] of Object.entries(originalToInternal)) {
+          if (data[origKey]) mapped[intKey] = data[origKey];
+        }
+        // Also accept internal keys directly (for re-import of our own exports)
+        for (const key of Object.keys(emptyForm) as (keyof FormData)[]) {
+          if (data[key] && !mapped[key]) mapped[key] = data[key];
+        }
+        setForm(mapped);
         toast({ title: "Importat", description: "Fișa a fost încărcată din fișier." });
       } catch {
         toast({ title: "Eroare", description: "Fișierul nu este valid.", variant: "destructive" });
