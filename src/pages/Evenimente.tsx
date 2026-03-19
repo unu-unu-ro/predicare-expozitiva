@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Layout from "@/components/Layout";
 import HeroBanner from "@/components/HeroBanner";
+import SEOHead from "@/components/SEOHead";
 import { MapPin, Calendar, ArrowRight, Loader2 } from "lucide-react";
 import {
   Accordion,
