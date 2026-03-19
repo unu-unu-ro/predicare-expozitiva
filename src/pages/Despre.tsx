@@ -163,14 +163,7 @@ const DespreePage = () => (
         <AccordionItem value="participanti">
           <AccordionTrigger className="font-display text-lg font-semibold">Ce spun participanții</AccordionTrigger>
           <AccordionContent className="pt-2">
-            <div className="grid md:grid-cols-2 gap-4">
-              {testimonials.map((t, i) => (
-                <blockquote key={i} className="bg-card rounded-lg p-5 border border-border">
-                  <p className="text-sm text-muted-foreground italic leading-relaxed">„{t.text}"</p>
-                  <footer className="mt-3 text-xs font-semibold text-accent">— {t.author}</footer>
-                </blockquote>
-              ))}
-            </div>
+            <TestimonialCarousel />
           </AccordionContent>
         </AccordionItem>
       </Accordion>
