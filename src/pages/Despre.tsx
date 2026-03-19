@@ -18,6 +18,10 @@ import photo07 from "@/assets/gallery/photo-07.jpeg";
 import photo08 from "@/assets/gallery/photo-08.jpeg";
 import photo09 from "@/assets/gallery/photo-09.jpeg";
 import photo10 from "@/assets/gallery/photo-10.jpeg";
+import photo11 from "@/assets/gallery/photo-11.jpeg";
+import photo12 from "@/assets/gallery/photo-12.jpeg";
+import photo13 from "@/assets/gallery/photo-13.jpeg";
+import photo14 from "@/assets/gallery/photo-14.jpeg";
 
 const galleryImages = [
   { src: photo01, alt: "Predicare la atelier" },
@@ -30,6 +34,10 @@ const galleryImages = [
   { src: photo08, alt: "Foto de grup participanți" },
   { src: photo09, alt: "Predicare în sesiune plenară" },
   { src: photo10, alt: "Sesiune plenară - privire de ansamblu" },
+  { src: photo11, alt: "Moment de rugăciune" },
+  { src: photo12, alt: "Predare la amvon" },
+  { src: photo13, alt: "Predicator la amvon" },
+  { src: photo14, alt: "Foto de grup – toți participanții" },
 ];
 const steps = [
   { num: 1, title: "Structura textuală", desc: "Identifică structura literară și fluxul argumentului în pasaj." },
