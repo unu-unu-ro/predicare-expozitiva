@@ -140,7 +140,7 @@ const Index = () => {
               <button
                 key={i}
                 onClick={() => setQuoteIndex(i)}
-                className={`w-2 h-2 rounded-full transition-all ${i === quoteIndex ? "bg-gold w-6" : "bg-cream/30"}`}
+                className={`w-2 h-2 rounded-full transition-all ${i === quoteIndex ? "bg-accent w-6" : "bg-cream/30"}`}
                 aria-label={`Citat ${i + 1}`}
               />
             ))}

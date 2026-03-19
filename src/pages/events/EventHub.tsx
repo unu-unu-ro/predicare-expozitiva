@@ -71,7 +71,7 @@ const EventHub = () => {
                   : `/events/${eventId}/${urlMap[link.url] || link.url}`;
 
                 const btnClass =
-                  "group flex items-center gap-3 w-full px-5 py-3 rounded-xl bg-primary text-primary-foreground font-semibold text-sm hover:bg-teal-dark transition-all hover:shadow-md";
+                  "group flex items-center gap-3 w-full px-5 py-3 rounded-xl bg-primary text-primary-foreground font-semibold text-sm hover:bg-navy-dark transition-all hover:shadow-md";
 
                 return (
                   <motion.div

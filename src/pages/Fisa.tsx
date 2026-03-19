@@ -346,7 +346,7 @@ const FisaPage = () => {
                 ← Înapoi la pagina principală
               </Link>
               <div className="flex-1" />
-              <Button type="button" onClick={handlePreviewPDF} className="bg-primary hover:bg-teal-dark text-primary-foreground font-semibold">
+              <Button type="button" onClick={handlePreviewPDF} className="bg-primary hover:bg-navy-dark text-primary-foreground font-semibold">
                 <FileText className="mr-2 h-4 w-4" /> Previzualizare PDF
               </Button>
             </div>
