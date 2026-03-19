@@ -29,7 +29,7 @@
       { "name": "Orar zilnic", "url": "orar", "icon": "calendar-days", "active": true },
       { "name": "Ghid de pregătire", "url": "/ghid", "icon": "book-open", "active": true },
       { "name": "Mapă participant PDF", "url": "handout", "icon": "file-down", "active": false },
-      { "name": "Feedback", "url": "$feedback", "icon": "message-square", "active": false }
+      { "name": "Feedback", "url": "$feedback", "icon": "message-square", "active": true }
     ]
   }
 ]
