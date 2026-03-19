@@ -111,7 +111,7 @@ const EventHub = () => {
             ← Înapoi la site
           </Link>
           <div className="text-xs text-muted-foreground/50">
-            © {new Date().getFullYear()} CST România 🤍
+            © {new Date().getFullYear()} Predicare expozitivă 🤍
           </div>
         </div>
       </motion.div>

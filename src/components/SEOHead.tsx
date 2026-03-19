@@ -8,11 +8,11 @@ interface SEOHeadProps {
   jsonLd?: Record<string, unknown>;
 }
 
-const SITE_NAME = "CST România – Ateliere de Predicare Expozitivă";
+const SITE_NAME = "Predicare Expozitivă – Ateliere de predicare";
 const BASE_URL = "https://cst.unu-unu.ro";
 
 const SEOHead = ({ title, description, path, type = "website", jsonLd }: SEOHeadProps) => {
-  const fullTitle = path === "/" ? SITE_NAME : `${title} | CST România`;
+  const fullTitle = path === "/" ? SITE_NAME : `${title} | Predicare Expozitivă`;
   const canonicalUrl = `${BASE_URL}${path}`;
 
   useEffect(() => {

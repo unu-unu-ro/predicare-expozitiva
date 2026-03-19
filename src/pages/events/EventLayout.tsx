@@ -109,7 +109,7 @@ const EventLayout = ({ children }: { children: ReactNode }) => {
               Site principal
             </Link>
             <div className="mt-1.5 text-[10px] opacity-50">
-              © {new Date().getFullYear()} CST România
+              © {new Date().getFullYear()} Predicare expozitivă
             </div>
           </div>
         )}
