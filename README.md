@@ -1,10 +1,8 @@
 # Predicare Expozitivă
 
-Site-ul oficial al atelierelor de predicare expozitivă.
+Site-ul oficial al atelierelor de predicare expozitivă din România, organizate în parteneriat cu [Charles Simeon Trust](https://simeontrust.org/).
 
-## 🔗 Live
-
-- **Preview**: [lovable.app](https://id-preview--ae26f2f6-3485-4159-a4f3-fb527d5503bd.lovable.app)
+Atelierele echipează predicatori, păstori și lideri de studii biblice cu instrumente practice pentru a mânui corect Cuvântul lui Dumnezeu, folosind o metodologie sistematică în 7 pași — de la analiza structurii textuale până la formularea unei predici expozitive.
 
 ## 🛠 Tech Stack
 
@@ -25,7 +23,8 @@ src/
 ├── pages/            # Route pages (Index, Evenimente, Contact, Despre…)
 │   └── events/       # Event micro-site (Hub, Orar, Participanți, Grupe)
 ├── hooks/            # Custom React hooks
-├── assets/           # Static images
+├── assets/           # Static images & gallery photos
+│   └── gallery/      # Real workshop photos (marquee gallery on /despre)
 └── lib/              # Utility functions
 
 public/
@@ -35,6 +34,19 @@ public/
         ├── participants.json
         └── orar.json
 ```
+
+## 🌐 Pages
+
+| Route | Description |
+|-------|-------------|
+| `/` | Landing page with hero banner and overview |
+| `/despre` | About the workshops — methodology, 7 steps, testimonials, photo gallery |
+| `/evenimente` | List of upcoming and past events |
+| `/events/{id}` | Event micro-site with schedule, participants, and small groups |
+| `/ghid` | Guide for participants |
+| `/fisa` | Worksheet (fișa de lucru) |
+| `/resurse` | Additional resources |
+| `/contact` | Contact form (Formspree) |
 
 ## 🚀 Getting Started
 
@@ -56,6 +68,10 @@ npm run build
    - `participants.json` — participant list
    - `orar.json` — schedule data
 3. The event micro-site is automatically available at `/events/{eventId}`.
+
+## 🖼 Gallery Photos
+
+Workshop photos are stored in `src/assets/gallery/` and displayed as an auto-scrolling marquee on the `/despre` page. To add new photos, place them in that folder and add the corresponding import + entry in `src/pages/Despre.tsx`.
 
 ## 📬 Contact Form
 
