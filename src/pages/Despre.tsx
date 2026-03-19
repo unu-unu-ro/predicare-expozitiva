@@ -136,7 +136,7 @@ const DespreePage = () => (
       </Accordion>
 
       {/* CTA */}
-      <div className="bg-card rounded-xl p-8 text-center border border-border mt-8">
+      <div className="bg-card section-dots section-vignette rounded-xl p-8 text-center border border-border mt-8">
         <h3 className="section-subtitle mb-4">Vrei să participi?</h3>
         <div className="flex flex-wrap justify-center gap-4">
           <Button asChild className="bg-primary hover:bg-navy-dark text-primary-foreground">

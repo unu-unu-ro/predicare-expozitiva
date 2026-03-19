@@ -115,4 +115,39 @@
   .page-section {
     @apply max-w-3xl mx-auto px-5 py-8 md:py-12;
   }
+
+  /* Subtle dot pattern for alternating sections */
+  .section-dots {
+    background-image: radial-gradient(hsl(var(--border)) 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+
+  /* Soft diagonal lines */
+  .section-lines {
+    background-image: repeating-linear-gradient(
+      -45deg,
+      transparent,
+      transparent 14px,
+      hsl(var(--border) / 0.4) 14px,
+      hsl(var(--border) / 0.4) 15px
+    );
+  }
+
+  /* Top/bottom fade vignette for depth */
+  .section-vignette {
+    position: relative;
+  }
+  .section-vignette::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: linear-gradient(
+      to bottom,
+      hsl(var(--background) / 0.6) 0%,
+      transparent 15%,
+      transparent 85%,
+      hsl(var(--background) / 0.6) 100%
+    );
+  }
 }

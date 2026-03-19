@@ -1,8 +1,9 @@
 import { Link } from "react-router-dom";
 
 const SiteFooter = () => (
-  <footer className="bg-primary text-primary-foreground">
-    <div className="max-w-3xl mx-auto px-5 py-8">
+  <footer className="bg-primary text-primary-foreground relative overflow-hidden">
+    <div className="absolute inset-0 opacity-[0.03] section-lines" />
+    <div className="relative z-10 max-w-3xl mx-auto px-5 py-8">
       <div className="grid md:grid-cols-3 gap-6">
         <div>
           <h3 className="font-display text-lg font-bold mb-3">

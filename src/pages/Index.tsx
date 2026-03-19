@@ -54,7 +54,7 @@ const Index = () => {
       />
 
       {/* Main Content */}
-      <section className="page-section">
+      <section className="page-section relative">
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -98,7 +98,7 @@ const Index = () => {
       </section>
 
       {/* Features strip */}
-      <section className="bg-card py-10">
+      <section className="bg-card section-dots section-vignette py-10">
         <div className="max-w-3xl mx-auto px-5 grid md:grid-cols-3 gap-6">
           {[
             { icon: BookOpen, title: "7 Pași Sistematici", desc: "Metodologie clară de la observare până la schița de predică." },
@@ -124,7 +124,8 @@ const Index = () => {
       </section>
 
       {/* Scripture Carousel */}
-      <section className="bg-primary py-10">
+      <section className="bg-primary py-10 relative overflow-hidden">
+        <div className="absolute inset-0 opacity-[0.04] section-lines" />
         <div className="max-w-3xl mx-auto px-5 text-center min-h-[120px] flex flex-col items-center justify-center">
           <motion.div
             key={quoteIndex}
