@@ -108,67 +108,8 @@ const FisaPage = () => {
   };
 
   const handlePreviewPDF = () => {
-    // Create a printable view
-    const printWindow = window.open("", "_blank");
-    if (!printWindow) return;
-    printWindow.document.write(`
-      <!DOCTYPE html>
-      <html><head><title>Fișa de Lucru - ${form.nume || "Necunoscut"}</title>
-      <style>
-        body { font-family: Georgia, serif; max-width: 700px; margin: 40px auto; padding: 0 20px; color: #1a1a1a; font-size: 14px; line-height: 1.6; }
-        h1 { text-align: center; font-size: 20px; margin-bottom: 4px; }
-        h2 { font-size: 16px; margin-top: 24px; border-bottom: 1px solid #ccc; padding-bottom: 4px; }
-        .meta { text-align: center; color: #666; margin-bottom: 24px; }
-        .field-label { font-weight: bold; margin-top: 12px; }
-        .field-value { white-space: pre-wrap; margin: 4px 0 12px; }
-        @media print { body { margin: 20px; } }
-      </style></head><body>
-      <h1>Fișa de Lucru pentru Predicare Expozitivă</h1>
-      <div class="meta">${form.nume ? `<strong>${form.nume}</strong> — ` : ""}${form.text || ""}</div>
-
-      <h2>1. Structura textului</h2>
-      <div class="field-label">a) Structura sub formă de secțiuni:</div>
-      <div class="field-value">${form.s1a || "—"}</div>
-      <div class="field-label">b) Strategii folosite:</div>
-      <div class="field-value">${form.s1b || "—"}</div>
-      <div class="field-label">c) Accentul structurii:</div>
-      <div class="field-value">${form.s1c || "—"}</div>
-
-      <h2>2. Contextul pasajului</h2>
-      <div class="field-label">a) Contextul literar:</div>
-      <div class="field-value">${form.s2a || "—"}</div>
-      <div class="field-label">b) Contextul istoric:</div>
-      <div class="field-value">${form.s2b || "—"}</div>
-      <div class="field-label">c) Contextul cultural:</div>
-      <div class="field-value">${form.s2c || "—"}</div>
-      <div class="field-label">d) Contextul biblic:</div>
-      <div class="field-value">${form.s2d || "—"}</div>
-
-      <h2>3. Ideea centrală a autorului</h2>
-      <div class="field-value">${form.s3 || "—"}</div>
-
-      <h2>4. Legătura cu Evanghelia</h2>
-      <div class="field-value">${form.s4 || "—"}</div>
-
-      <h2>5. Ideea ta centrală</h2>
-      <div class="field-value">${form.s5 || "—"}</div>
-
-      <h2>6. Aplicații</h2>
-      <div class="field-label">Aplicații pentru cei mântuiți:</div>
-      <div class="field-value">${form.s6a || "—"}</div>
-      <div class="field-label">Aplicații pentru cei nemântuiți:</div>
-      <div class="field-value">${form.s6b || "—"}</div>
-
-      <h2>7. Titlu și schiță</h2>
-      <div class="field-label">Titlul predicii:</div>
-      <div class="field-value">${form.s7titlu || "—"}</div>
-      <div class="field-label">Schița mesajului:</div>
-      <div class="field-value">${form.s7schita || "—"}</div>
-
-      <script>window.print();</script>
-      </body></html>
-    `);
-    printWindow.document.close();
+    localStorage.setItem("fisa-print-data", JSON.stringify(form));
+    navigate("/print-preview");
   };
 
   return (
