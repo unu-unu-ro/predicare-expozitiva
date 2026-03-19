@@ -118,8 +118,8 @@ const Index = () => {
       </section>
 
       {/* Scripture Carousel */}
-      <section className="bg-primary py-16">
-        <div className="max-w-3xl mx-auto px-6 text-center min-h-[140px] flex flex-col items-center justify-center">
+      <section className="bg-primary py-10">
+        <div className="max-w-3xl mx-auto px-5 text-center min-h-[120px] flex flex-col items-center justify-center">
           <motion.div
             key={quoteIndex}
             initial={{ opacity: 0, y: 10 }}

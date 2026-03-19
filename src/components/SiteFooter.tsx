@@ -37,7 +37,7 @@ const SiteFooter = () => (
           </a>
         </div>
       </div>
-      <div className="mt-10 pt-6 border-t border-primary-foreground/20 text-center text-xs opacity-60">
+      <div className="mt-6 pt-4 border-t border-primary-foreground/20 text-center text-xs opacity-60">
         © {new Date().getFullYear()} Ateliere de predicare expozitivă
       </div>
     </div>
