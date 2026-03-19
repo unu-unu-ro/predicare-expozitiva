@@ -8,20 +8,28 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { Button } from "@/components/ui/button";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
-import galleryGroup from "@/assets/gallery/workshop-group-1.jpg";
-import galleryPlenary from "@/assets/gallery/workshop-plenary.jpg";
-import galleryNotes from "@/assets/gallery/workshop-notes.jpg";
-import galleryFellowship from "@/assets/gallery/workshop-fellowship.jpg";
-import galleryBible from "@/assets/gallery/workshop-bible.jpg";
-import galleryWide from "@/assets/gallery/workshop-wide.jpg";
+import photo01 from "@/assets/gallery/photo-01.jpeg";
+import photo02 from "@/assets/gallery/photo-02.jpeg";
+import photo03 from "@/assets/gallery/photo-03.jpeg";
+import photo04 from "@/assets/gallery/photo-04.jpeg";
+import photo05 from "@/assets/gallery/photo-05.jpeg";
+import photo06 from "@/assets/gallery/photo-06.jpeg";
+import photo07 from "@/assets/gallery/photo-07.jpeg";
+import photo08 from "@/assets/gallery/photo-08.jpeg";
+import photo09 from "@/assets/gallery/photo-09.jpeg";
+import photo10 from "@/assets/gallery/photo-10.jpeg";
 
 const galleryImages = [
-  { src: galleryGroup, alt: "Lucru în grupuri mici" },
-  { src: galleryPlenary, alt: "Sesiune plenară" },
-  { src: galleryNotes, alt: "Studiu intens în Scriptură" },
-  { src: galleryFellowship, alt: "Părtășie între participanți" },
-  { src: galleryBible, alt: "Biblia și fișa de lucru" },
-  { src: galleryWide, alt: "Privire de ansamblu asupra atelierului" },
+  { src: photo01, alt: "Predicare la atelier" },
+  { src: photo02, alt: "Lucru în grup mic" },
+  { src: photo03, alt: "Studiu biblic în grup" },
+  { src: photo04, alt: "Sesiune de lucru" },
+  { src: photo05, alt: "Grup de lucru" },
+  { src: photo06, alt: "Discuții în grup mic" },
+  { src: photo07, alt: "Sesiune plenară" },
+  { src: photo08, alt: "Foto de grup participanți" },
+  { src: photo09, alt: "Predicare în sesiune plenară" },
+  { src: photo10, alt: "Sesiune plenară - privire de ansamblu" },
 ];
 const steps = [
   { num: 1, title: "Structura textuală", desc: "Identifică structura literară și fluxul argumentului în pasaj." },
