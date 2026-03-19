@@ -8,6 +8,8 @@ import Despre from "./pages/Despre.tsx";
 import Evenimente from "./pages/Evenimente.tsx";
 import Resurse from "./pages/Resurse.tsx";
 import Contact from "./pages/Contact.tsx";
+import Ghid from "./pages/Ghid.tsx";
+import Fisa from "./pages/Fisa.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 const queryClient = new QueryClient();
@@ -24,6 +26,8 @@ const App = () => (
           <Route path="/evenimente" element={<Evenimente />} />
           <Route path="/resurse" element={<Resurse />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/ghid" element={<Ghid />} />
+          <Route path="/fisa" element={<Fisa />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
