@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import Layout from "@/components/Layout";
+import SEOHead from "@/components/SEOHead";
 import HeroBanner from "@/components/HeroBanner";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, BookOpen, Users, MessageSquareQuote } from "lucide-react";
@@ -42,6 +43,11 @@ const Index = () => {
 
   return (
     <Layout>
+      <SEOHead
+        title="Ateliere de Predicare Expozitivă"
+        description="Ateliere de predicare expozitivă în România, în parteneriat cu Charles Simeon Trust. Formăm predicatori care mânuiesc drept Cuvântul adevărului."
+        path="/"
+      />
       <HeroBanner
         title="Ateliere de Predicare Expozitivă"
         subtitle="Rămâneți conectat cu atelierele și resursele Charles Simeon Trust în România."

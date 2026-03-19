@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import Layout from "@/components/Layout";
 import HeroBanner from "@/components/HeroBanner";
+import SEOHead from "@/components/SEOHead";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -155,6 +156,11 @@ const FisaPage = () => {
 
   return (
     <Layout>
+      <SEOHead
+        title="Fișa de Lucru"
+        description="Completează fișa de lucru interactivă pentru pregătirea predicii expozitive: structură, context, ideea centrală și schița predicii."
+        path="/fisa"
+      />
       <HeroBanner
         title="Fișa de Lucru"
         subtitle="Completează online cei 7 pași și generează PDF"

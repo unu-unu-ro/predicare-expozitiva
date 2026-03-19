@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Layout from "@/components/Layout";
 import HeroBanner from "@/components/HeroBanner";
+import SEOHead from "@/components/SEOHead";
 import { MapPin, Calendar, ArrowRight, Loader2 } from "lucide-react";
 import {
   Accordion,
@@ -55,6 +56,11 @@ const EvenimentePage = () => {
 
   return (
     <Layout>
+      <SEOHead
+        title="Evenimente"
+        description="Vezi calendarul atelierelor de predicare expozitivă din România. Află când și unde are loc următorul eveniment CST."
+        path="/evenimente"
+      />
       <HeroBanner title="Evenimente" subtitle="Atelierele de predicare expozitivă din România." />
 
       <section className="page-section space-y-6">

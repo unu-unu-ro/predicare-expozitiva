@@ -2,6 +2,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import Layout from "@/components/Layout";
 import HeroBanner from "@/components/HeroBanner";
+import SEOHead from "@/components/SEOHead";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -27,6 +28,11 @@ const ContactPage = () => {
 
   return (
     <Layout>
+      <SEOHead
+        title="Contact"
+        description="Contactează echipa CST România pentru întrebări despre atelierele de predicare expozitivă, înscrieri sau parteneriate."
+        path="/contact"
+      />
       <HeroBanner title="Contact" subtitle="Contactează-ne pentru mai multe informații despre ateliere." />
 
       <section className="page-section">
