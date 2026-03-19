@@ -1,0 +1,380 @@
+[
+  {
+    "name": "Andrei Canta",
+    "role": "Participant",
+    "group": "Iosua Faur",
+    "text1": "Amos 2:4-16",
+    "text2": "Amos 5:18-27"
+  },
+  {
+    "name": "Cristian Craciun",
+    "role": "Participant",
+    "group": "Daniel Suciu",
+    "text1": "Amos 1:1-2:3",
+    "text2": "Amos 5:1-17"
+  },
+  {
+    "name": "Emilian Cîra",
+    "role": "Participant",
+    "group": "Daniel Suciu",
+    "text1": "Amos 4:1-5",
+    "text2": "Amos 7:1-8:3"
+  },
+  {
+    "name": "Beniamin Obrete",
+    "role": "Participant",
+    "group": "Florin Mureșan",
+    "text1": "Amos 1:1-2:3",
+    "text2": "Amos 5:1-17"
+  },
+  {
+    "name": "Mihai Kollar",
+    "role": "Participant",
+    "group": "Daniel Suciu",
+    "text1": "Amos 4:6-13",
+    "text2": "Amos 9:1-10"
+  },
+  {
+    "name": "Ovidiu Chis",
+    "role": "Ucenic",
+    "group": "Florin Mureșan",
+    "text1": "Amos 4:6-13",
+    "text2": "Amos 9:1-10"
+  },
+  {
+    "name": "Daniel Suciu",
+    "role": "Lider",
+    "group": "Daniel Suciu",
+    "text1": "",
+    "text2": ""
+  },
+  {
+    "name": "Andrei Bușui",
+    "role": "Participant",
+    "group": "Ben O'Toole",
+    "text1": "Amos 4:1-5",
+    "text2": "Amos 7:1-8:3"
+  },
+  {
+    "name": "Mitraș Dudaș",
+    "role": "Lider",
+    "group": "Mitraș Dudaș",
+    "text1": "",
+    "text2": ""
+  },
+  {
+    "name": "Bîrcă Daniel",
+    "role": "Participant",
+    "group": "Ben O'Toole",
+    "text1": "Amos 4:1-5",
+    "text2": "Amos 7:1-8:3"
+  },
+  {
+    "name": "Flavius Coman",
+    "role": "Participant",
+    "group": "Mitraș Dudaș",
+    "text1": "Amos 4:6-13",
+    "text2": "Amos 9:1-10"
+  },
+  {
+    "name": "Neemia Faur",
+    "role": "Ucenic",
+    "group": "Daniel Suciu",
+    "text1": "Amos 2:4-16",
+    "text2": "Amos 5:18-27"
+  },
+  {
+    "name": "Ciutac Dan",
+    "role": "Participant",
+    "group": "Daniel Suciu",
+    "text1": "Amos 4:1-5",
+    "text2": "Amos 7:1-8:3"
+  },
+  {
+    "name": "David Traian",
+    "role": "Participant",
+    "group": "Daniel Suciu",
+    "text1": "Amos 1:1-2:3",
+    "text2": "Amos 5:1-17"
+  },
+  {
+    "name": "Marcu Victor Vlad",
+    "role": "Participant",
+    "group": "Mitraș Dudaș",
+    "text1": "Amos 2:4-16",
+    "text2": "Amos 5:18-27"
+  },
+  {
+    "name": "Nicolae Matei",
+    "role": "Participant",
+    "group": "Daniel Lacatoș",
+    "text1": "Amos 1:1-2:3",
+    "text2": "Amos 5:1-17"
+  },
+  {
+    "name": "Florin Mureșan",
+    "role": "Lider",
+    "group": "Florin Mureșan",
+    "text1": "",
+    "text2": ""
+  },
+  {
+    "name": "Porsega Mihai",
+    "role": "Participant",
+    "group": "Daniel Lacatoș",
+    "text1": "Amos 4:6-13",
+    "text2": "Amos 9:1-10"
+  },
+  {
+    "name": "Deaj David",
+    "role": "Participant",
+    "group": "Mitraș Dudaș",
+    "text1": "Amos 4:1-5",
+    "text2": "Amos 7:1-8:3"
+  },
+  {
+    "name": "Hot Călin",
+    "role": "Participant",
+    "group": "Daniel Lacatoș",
+    "text1": "Amos 4:1-5",
+    "text2": "Amos 7:1-8:3"
+  },
+  {
+    "name": "Flavius Indreiu",
+    "role": "Participant",
+    "group": "Daniel Lacatoș",
+    "text1": "Amos 4:1-5",
+    "text2": "Amos 7:1-8:3"
+  },
+  {
+    "name": "Sergiu Matei",
+    "role": "Participant",
+    "group": "Florin Mureșan",
+    "text1": "Amos 2:4-16",
+    "text2": "Amos 5:18-27"
+  },
+  {
+    "name": "Alexandru Ovidiu Hotea",
+    "role": "Participant",
+    "group": "Iosua Faur",
+    "text1": "Amos 1:1-2:3",
+    "text2": "Amos 5:1-17"
+  },
+  {
+    "name": "Isztojka Iancu",
+    "role": "Participant",
+    "group": "Daniel Lacatoș",
+    "text1": "Amos 2:4-16",
+    "text2": "Amos 5:18-27"
+  },
+  {
+    "name": "Ardelean Sergiu",
+    "role": "Participant",
+    "group": "Mitraș Dudaș",
+    "text1": "Amos 4:1-5",
+    "text2": "Amos 7:1-8:3"
+  },
+  {
+    "name": "Juncu Samuel",
+    "role": "Participant",
+    "group": "Florin Mureșan",
+    "text1": "Amos 4:1-5",
+    "text2": "Amos 7:1-8:3"
+  },
+  {
+    "name": "Ovidiu Hanc",
+    "role": "Ucenic",
+    "group": "Ben O'Toole",
+    "text1": "Amos 1:1-2:3",
+    "text2": "Amos 5:1-17"
+  },
+  {
+    "name": "Sabin Varan",
+    "role": "Ucenic",
+    "group": "Iosua Faur",
+    "text1": "Amos 4:1-5",
+    "text2": "Amos 7:1-8:3"
+  },
+  {
+    "name": "Ionică Martonfi",
+    "role": "Participant",
+    "group": "Daniel Suciu",
+    "text1": "Amos 2:4-16",
+    "text2": "Amos 5:18-27"
+  },
+  {
+    "name": "Torok Alin",
+    "role": "Participant",
+    "group": "Mitraș Dudaș",
+    "text1": "Amos 2:4-16",
+    "text2": "Amos 5:18-27"
+  },
+  {
+    "name": "Coman Andi",
+    "role": "Participant",
+    "group": "Ben O'Toole",
+    "text1": "Amos 2:4-16",
+    "text2": "Amos 5:18-27"
+  },
+  {
+    "name": "Viorel Culea",
+    "role": "Ucenic",
+    "group": "Mitraș Dudaș",
+    "text1": "Amos 1:1-2:3",
+    "text2": "Amos 5:1-17"
+  },
+  {
+    "name": "Luput Bogdan",
+    "role": "Participant",
+    "group": "Iosua Faur",
+    "text1": "Amos 4:1-5",
+    "text2": "Amos 7:1-8:3"
+  },
+  {
+    "name": "Narcis Ranghiuc ",
+    "role": "Participant",
+    "group": "Daniel Lacatoș",
+    "text1": "Amos 2:4-16",
+    "text2": "Amos 5:18-27"
+  },
+  {
+    "name": "Carmel Ciurdas",
+    "role": "Participant",
+    "group": "Iosua Faur",
+    "text1": "Amos 2:4-16",
+    "text2": "Amos 5:18-27"
+  },
+  {
+    "name": "Ciocan Samuel",
+    "role": "Participant",
+    "group": "Florin Mureșan",
+    "text1": "Amos 1:1-2:3",
+    "text2": "Amos 5:1-17"
+  },
+  {
+    "name": "Daniel Lacatoș",
+    "role": "Lider",
+    "group": "Daniel Lacatoș",
+    "text1": "",
+    "text2": ""
+  },
+  {
+    "name": "Iosua Faur",
+    "role": "Lider",
+    "group": "Iosua Faur",
+    "text1": "",
+    "text2": ""
+  },
+  {
+    "name": "Marusca Titus",
+    "role": "Participant",
+    "group": "Iosua Faur",
+    "text1": "Amos 4:6-13",
+    "text2": "Amos 9:1-10"
+  },
+  {
+    "name": "Marin Andrei",
+    "role": "Participant",
+    "group": "Florin Mureșan",
+    "text1": "Amos 4:6-13",
+    "text2": "Amos 9:1-10"
+  },
+  {
+    "name": "Stana Daniel",
+    "role": "Participant",
+    "group": "Daniel Lacatoș",
+    "text1": "Amos 4:6-13",
+    "text2": "Amos 9:1-10"
+  },
+  {
+    "name": "Codrean Oliviu",
+    "role": "Participant",
+    "group": "Mitraș Dudaș",
+    "text1": "Amos 4:6-13",
+    "text2": "Amos 9:1-10"
+  },
+  {
+    "name": "Marin Liviu",
+    "role": "Participant",
+    "group": "Iosua Faur",
+    "text1": "Amos 4:6-13",
+    "text2": "Amos 9:1-10"
+  },
+  {
+    "name": "Sălăgean Andrei ",
+    "role": "Participant",
+    "group": "Daniel Suciu",
+    "text1": "Amos 4:6-13",
+    "text2": "Amos 9:1-10"
+  },
+  {
+    "name": "Țap Cristian Marius",
+    "role": "Participant",
+    "group": "Florin Mureșan",
+    "text1": "Amos 2:4-16",
+    "text2": "Amos 5:18-27"
+  },
+  {
+    "name": "Magdici Valentin-Paul",
+    "role": "Participant",
+    "group": "Ben O'Toole",
+    "text1": "Amos 4:6-13",
+    "text2": "Amos 9:1-10"
+  },
+  {
+    "name": "Flaviu Meseșan",
+    "role": "Participant",
+    "group": "Iosua Faur",
+    "text1": "Amos 1:1-2:3",
+    "text2": "Amos 5:1-17"
+  },
+  {
+    "name": "Apascaritei Dennis",
+    "role": "Participant",
+    "group": "Mitraș Dudaș",
+    "text1": "Amos 1:1-2:3",
+    "text2": "Amos 5:1-17"
+  },
+  {
+    "name": "Todi Croitoru",
+    "role": "Ucenic",
+    "group": "Daniel Lacatoș",
+    "text1": "Amos 1:1-2:3",
+    "text2": "Amos 5:1-17"
+  },
+  {
+    "name": "Kemeri Zsolt",
+    "role": "Participant",
+    "group": "Florin Mureșan",
+    "text1": "Amos 4:1-5",
+    "text2": "Amos 7:1-8:3"
+  },
+  {
+    "name": "Gulfam 1",
+    "role": "Participant",
+    "group": "Ben O'Toole",
+    "text1": "Amos 1:1-2:3",
+    "text2": "Amos 5:1-17"
+  },
+  {
+    "name": "Gulfam 2",
+    "role": "Participant",
+    "group": "Ben O'Toole",
+    "text1": "Amos 2:4-16",
+    "text2": "Amos 5:18-27"
+  },
+  {
+    "name": "Edgar Maron",
+    "role": "Participant",
+    "group": "Ben O'Toole",
+    "text1": "Amos 4:6-13",
+    "text2": "Amos 9:1-10"
+  },
+  {
+    "name": "Ben O'Toole",
+    "role": "Lider",
+    "group": "Ben O'Toole",
+    "text1": "",
+    "text2": ""
+  }
+]
