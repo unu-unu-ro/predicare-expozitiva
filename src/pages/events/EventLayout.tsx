@@ -92,13 +92,6 @@ const EventLayout = ({ children }: { children: ReactNode }) => {
                 <span className="text-[11px] opacity-60 truncate hidden sm:inline">{data.event.details}</span>
               </div>
               <div className="flex-1" />
-              <Link
-                to="/evenimente"
-                className="flex items-center gap-1 text-[11px] opacity-60 hover:opacity-100 transition-opacity"
-              >
-                <ArrowLeft size={12} />
-                Site
-              </Link>
             </div>
           </div>
         )}
