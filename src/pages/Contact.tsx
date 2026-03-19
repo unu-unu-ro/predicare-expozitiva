@@ -69,7 +69,7 @@ const ContactPage = () => {
             >
               <div className="space-y-2">
                 <Label htmlFor="name">Nume *</Label>
-                <Input id="name" placeholder="Numele tău" required />
+                <Input id="name" name="name" placeholder="Numele tău" required />
               </div>
               <div className="space-y-2">
                 <Label htmlFor="email">Email *</Label>
