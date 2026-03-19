@@ -23,6 +23,8 @@ interface EventEntry {
   type: string;
   link: string;
   eventId?: string;
+  urlInregistrare?: string;
+  urlFeedback?: string;
   event?: EventMeta;
   links?: EventLink[];
 }
@@ -30,6 +32,8 @@ interface EventEntry {
 export interface EventData {
   event: EventMeta;
   links: EventLink[];
+  urlInregistrare?: string;
+  urlFeedback?: string;
 }
 
 interface EventContextType {
