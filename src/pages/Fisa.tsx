@@ -52,6 +52,8 @@ const stepFields: (keyof FormData)[][] = [
 
 const FisaPage = () => {
   const { toast } = useToast();
+  const navigate = useNavigate();
+  const [form, setForm] = useState<FormData>(emptyForm);
   const [form, setForm] = useState<FormData>(emptyForm);
   const [showGuide, setShowGuide] = useState(false);
 

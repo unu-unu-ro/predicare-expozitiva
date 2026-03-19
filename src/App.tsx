@@ -29,6 +29,7 @@ const App = () => (
           <Route path="/contact" element={<Contact />} />
           <Route path="/ghid" element={<Ghid />} />
           <Route path="/fisa" element={<Fisa />} />
+          <Route path="/print-preview" element={<PrintPreview />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
