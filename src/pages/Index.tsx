@@ -53,7 +53,7 @@ const Index = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-50px" }}
-          className="space-y-8"
+          className="space-y-5"
         >
           <motion.div custom={0} variants={fadeUp}>
             <h2 className="section-title">Predicare mai bună pretutindeni</h2>
