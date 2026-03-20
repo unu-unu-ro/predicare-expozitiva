@@ -211,14 +211,18 @@ const DespreePage = () => {
 
         <div className="flex gap-3 animate-marquee hover:[animation-play-state:paused]">
           {[...galleryImages, ...galleryImages].map((img, i) => (
-            <div key={i} className="flex-shrink-0 w-48 sm:w-64 aspect-[3/2] rounded-lg overflow-hidden">
+            <button
+              key={i}
+              onClick={() => setLightboxIndex(i % galleryImages.length)}
+              className="flex-shrink-0 w-48 sm:w-64 aspect-[3/2] rounded-lg overflow-hidden cursor-pointer focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2"
+            >
               <img
                 src={img.src}
                 alt={img.alt}
                 className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
                 loading="lazy"
               />
-            </div>
+            </button>
           ))}
         </div>
       </div>
