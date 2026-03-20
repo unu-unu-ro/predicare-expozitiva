@@ -5,9 +5,9 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const navItems = [
   { label: "Acasă", path: "/" },
-  { label: "Despre", path: "/despre" },
   { label: "Evenimente", path: "/evenimente" },
   { label: "Resurse", path: "/resurse" },
+  { label: "Despre", path: "/despre" },
   { label: "Contact", path: "/contact" },
 ];
 
