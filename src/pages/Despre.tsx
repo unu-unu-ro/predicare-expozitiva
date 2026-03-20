@@ -250,7 +250,7 @@ const DespreePage = () => (
     </section>
 
     {/* ── Section 4: Ce faci la atelier ── */}
-    <section className="py-16 md:py-24 bg-card/50">
+    <section className="py-16 md:py-24 bg-card/50 section-lines section-vignette">
       <div className="max-w-3xl mx-auto px-5">
         <motion.h2
           variants={fadeUp}
