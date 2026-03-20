@@ -209,7 +209,7 @@ const DespreePage = () => (
     </section>
 
     {/* ── Section 3: Cei 7 Pași ── */}
-    <section className="py-16 md:py-24">
+    <section className="py-16 md:py-24 section-dots section-vignette">
       <div className="max-w-3xl mx-auto px-5">
         <motion.h2
           variants={fadeUp}
@@ -250,7 +250,7 @@ const DespreePage = () => (
     </section>
 
     {/* ── Section 4: Ce faci la atelier ── */}
-    <section className="py-16 md:py-24 bg-card/50">
+    <section className="py-16 md:py-24 bg-card/50 section-lines section-vignette">
       <div className="max-w-3xl mx-auto px-5">
         <motion.h2
           variants={fadeUp}
@@ -310,7 +310,7 @@ const DespreePage = () => (
     </section>
 
     {/* ── Section 5: Cui se adresează ── */}
-    <section className="py-16 md:py-24">
+    <section className="py-16 md:py-24 section-dots section-vignette">
       <motion.div
         variants={fadeUp}
         initial="hidden"
@@ -342,7 +342,7 @@ const DespreePage = () => (
     </section>
 
     {/* ── Section 6: Testimoniale ── */}
-    <section className="py-16 md:py-24 bg-card/50">
+    <section className="py-16 md:py-24 bg-card/50 section-lines section-vignette">
       <div className="px-5">
         <motion.h2
           variants={fadeUp}
