@@ -2,7 +2,15 @@ import { motion } from "framer-motion";
 import Layout from "@/components/Layout";
 import HeroBanner from "@/components/HeroBanner";
 import SEOHead from "@/components/SEOHead";
-import { ExternalLink, BookOpen, Headphones, Globe } from "lucide-react";
+import FeaturePlugs from "@/components/FeaturePlugs";
+import {
+  ExternalLink,
+  BookOpen,
+  Headphones,
+  Globe,
+  Calendar,
+  Info,
+} from "lucide-react";
 
 const sections = [
   {
@@ -34,7 +42,7 @@ const sections = [
         external: true,
       },
       {
-        title: 'Seria „9Marks: Zidind Biserici Sănătoase”',
+        title: "Seria „9Marks: Zidind Biserici Sănătoase”",
         desc: "Resurse biblice și practice pentru consolidarea bisericilor prin învățături esențiale despre sănătatea spirituală.",
         url: "https://www.magnagratia.org/serii/seria-9marks-zidind-biserici-sanatoase/",
         external: true,
@@ -74,7 +82,10 @@ const ResursePage = () => (
       description="Ghiduri, podcasturi și materiale utile pentru predicarea expozitivă. Resurse de la Charles Simeon Trust și parteneri."
       path="/resurse"
     />
-    <HeroBanner title="Resurse" subtitle="Materiale utile pentru predicarea expozitivă." />
+    <HeroBanner
+      title="Resurse"
+      subtitle="Materiale utile pentru predicarea expozitivă."
+    />
 
     <section className="page-section space-y-12">
       {sections.map((section, sIdx) => (
@@ -104,10 +115,15 @@ const ResursePage = () => (
                     <h3 className="font-display text-lg font-semibold text-foreground group-hover:text-primary transition-colors">
                       {item.title}
                     </h3>
-                    <p className="text-sm text-muted-foreground mt-1 leading-relaxed">{item.desc}</p>
+                    <p className="text-sm text-muted-foreground mt-1 leading-relaxed">
+                      {item.desc}
+                    </p>
                   </div>
                   {item.external && (
-                    <ExternalLink className="flex-shrink-0 text-muted-foreground group-hover:text-accent transition-colors mt-1" size={16} />
+                    <ExternalLink
+                      className="flex-shrink-0 text-muted-foreground group-hover:text-accent transition-colors mt-1"
+                      size={16}
+                    />
                   )}
                 </div>
               </a>
@@ -115,6 +131,26 @@ const ResursePage = () => (
           </div>
         </motion.div>
       ))}
+
+      <FeaturePlugs
+        heading="Vrei să participi?"
+        subtext="Verifică evenimentele viitoare sau află mai multe despre ateliere."
+        plugs={[
+          {
+            title: "Vezi evenimente",
+            description: "",
+            to: "/evenimente",
+            icon: Calendar,
+          },
+          {
+            title: "Despre ateliere",
+            description: "",
+            to: "/despre",
+            icon: Info,
+            variant: "outline",
+          },
+        ]}
+      />
     </section>
   </Layout>
 );

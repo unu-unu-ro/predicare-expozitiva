@@ -3,7 +3,16 @@ import { motion } from "framer-motion";
 import Layout from "@/components/Layout";
 import HeroBanner from "@/components/HeroBanner";
 import SEOHead from "@/components/SEOHead";
-import { MapPin, Calendar, ArrowRight, Loader2 } from "lucide-react";
+import FeaturePlugs from "@/components/FeaturePlugs";
+import {
+  MapPin,
+  Calendar,
+  ArrowRight,
+  Loader2,
+  BookOpen,
+  Info,
+} from "lucide-react";
+import type { FeaturePlug } from "@/components/FeaturePlugs";
 import {
   Accordion,
   AccordionContent,
@@ -22,8 +31,18 @@ interface EventItem {
 
 function formatDateRange(dateStr: string, dateEndStr: string): string {
   const months = [
-    "Ianuarie", "Februarie", "Martie", "Aprilie", "Mai", "Iunie",
-    "Iulie", "August", "Septembrie", "Octombrie", "Noiembrie", "Decembrie",
+    "Ianuarie",
+    "Februarie",
+    "Martie",
+    "Aprilie",
+    "Mai",
+    "Iunie",
+    "Iulie",
+    "August",
+    "Septembrie",
+    "Octombrie",
+    "Noiembrie",
+    "Decembrie",
   ];
   const d = new Date(dateStr);
   const dEnd = new Date(dateEndStr);
@@ -61,13 +80,22 @@ const EvenimentePage = () => {
         description="Vezi calendarul atelierelor de predicare expozitivă din România. Află când și unde are loc următorul eveniment CST."
         path="/evenimente"
       />
-      <HeroBanner title="Evenimente" subtitle="Atelierele de predicare expozitivă din România." />
+      <HeroBanner
+        title="Evenimente"
+        subtitle="Atelierele de predicare expozitivă din România."
+      />
 
       <section className="page-section space-y-6">
-        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.6 }}>
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.6 }}
+        >
           <p className="text-muted-foreground leading-relaxed">
-            Atelierele de predicare expozitivă se organizează de două ori pe an, în diferite orașe din România.
-            Mai jos găsești evenimentele viitoare la care te poți înscrie, precum și un istoric al atelierelor trecute.
+            Atelierele de predicare expozitivă se organizează de două ori pe an,
+            în diferite orașe din România. Mai jos găsești evenimentele viitoare
+            la care te poți înscrie, precum și un istoric al atelierelor
+            trecute.
           </p>
         </motion.div>
 
@@ -89,8 +117,31 @@ const EvenimentePage = () => {
             ) : (
               <div className="bg-card rounded-xl border border-border p-6 text-center">
                 <Calendar className="mx-auto text-accent mb-2" size={28} />
-                <h3 className="font-display text-lg font-semibold text-foreground">Niciun eveniment viitor programat</h3>
-                <p className="text-sm text-muted-foreground mt-1">Urmărește această pagină pentru următoarele ateliere.</p>
+                <h3 className="font-display text-lg font-semibold text-foreground">
+                  Niciun eveniment viitor programat
+                </h3>
+                <p className="text-sm text-muted-foreground mt-1">
+                  Urmărește această pagină pentru următoarele ateliere.
+                </p>
+                <FeaturePlugs
+                  heading="Între timp, explorează"
+                  subtext="Descoperă resurse utile sau află mai multe despre atelierele noastre."
+                  plugs={[
+                    {
+                      title: "Vezi resursele",
+                      description: "",
+                      to: "/resurse",
+                      icon: BookOpen,
+                    },
+                    {
+                      title: "Despre ateliere",
+                      description: "",
+                      to: "/despre",
+                      icon: Info,
+                      variant: "outline",
+                    },
+                  ]}
+                />
               </div>
             )}
 
@@ -118,7 +169,13 @@ const EvenimentePage = () => {
   );
 };
 
-const EventCard = ({ event, highlight }: { event: EventItem; highlight?: boolean }) => {
+const EventCard = ({
+  event,
+  highlight,
+}: {
+  event: EventItem;
+  highlight?: boolean;
+}) => {
   const dateLabel = formatDateRange(event.date, event.dateEnd);
   return (
     <a
@@ -144,10 +201,15 @@ const EventCard = ({ event, highlight }: { event: EventItem; highlight?: boolean
         <div className="flex items-center gap-1 text-sm text-muted-foreground mt-1">
           <MapPin size={14} />
           <span>{event.location}</span>
-          <span className="ml-2 text-xs bg-muted px-2 py-0.5 rounded-full">{event.type}</span>
+          <span className="ml-2 text-xs bg-muted px-2 py-0.5 rounded-full">
+            {event.type}
+          </span>
         </div>
       </div>
-      <ArrowRight className="text-muted-foreground group-hover:text-accent transition-colors" size={18} />
+      <ArrowRight
+        className="text-muted-foreground group-hover:text-accent transition-colors"
+        size={18}
+      />
     </a>
   );
 };

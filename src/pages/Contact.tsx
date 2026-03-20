@@ -3,11 +3,12 @@ import { motion } from "framer-motion";
 import Layout from "@/components/Layout";
 import HeroBanner from "@/components/HeroBanner";
 import SEOHead from "@/components/SEOHead";
+import FeaturePlugs from "@/components/FeaturePlugs";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { Send, CheckCircle } from "lucide-react";
+import { Send, CheckCircle, BookOpen, Calendar } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
 const ContactPage = () => {
@@ -27,9 +28,16 @@ const ContactPage = () => {
       });
       if (!res.ok) throw new Error("Eroare la trimitere");
       setSubmitted(true);
-      toast({ title: "Mesaj trimis!", description: "Vă vom contacta în curând." });
+      toast({
+        title: "Mesaj trimis!",
+        description: "Vă vom contacta în curând.",
+      });
     } catch {
-      toast({ title: "Eroare", description: "Nu s-a putut trimite mesajul. Încearcă din nou.", variant: "destructive" });
+      toast({
+        title: "Eroare",
+        description: "Nu s-a putut trimite mesajul. Încearcă din nou.",
+        variant: "destructive",
+      });
     } finally {
       setLoading(false);
     }
@@ -42,7 +50,10 @@ const ContactPage = () => {
         description="Contactează echipa pentru întrebări despre atelierele de predicare expozitivă, înscrieri sau parteneriate."
         path="/contact"
       />
-      <HeroBanner title="Contact" subtitle="Contactează-ne pentru mai multe informații despre ateliere." />
+      <HeroBanner
+        title="Contact"
+        subtitle="Contactează-ne pentru mai multe informații despre ateliere."
+      />
 
       <section className="page-section">
         <div className="max-w-lg mx-auto">
@@ -54,10 +65,35 @@ const ContactPage = () => {
             >
               <CheckCircle className="mx-auto text-accent" size={48} />
               <h3 className="section-subtitle">Mulțumim!</h3>
-              <p className="text-muted-foreground">Mesajul tău a fost trimis. Te vom contacta în curând.</p>
-              <Button onClick={() => setSubmitted(false)} variant="outline" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground mt-4">
+              <p className="text-muted-foreground">
+                Mesajul tău a fost trimis. Te vom contacta în curând.
+              </p>
+              <Button
+                onClick={() => setSubmitted(false)}
+                variant="outline"
+                className="border-primary text-primary hover:bg-primary hover:text-primary-foreground mt-4"
+              >
                 Trimite alt mesaj
               </Button>
+              <FeaturePlugs
+                heading="Între timp, explorează"
+                subtext="Descoperă resursele noastre sau vezi următoarele ateliere."
+                plugs={[
+                  {
+                    title: "Vezi resursele",
+                    description: "",
+                    to: "/resurse",
+                    icon: BookOpen,
+                  },
+                  {
+                    title: "Vezi evenimente",
+                    description: "",
+                    to: "/evenimente",
+                    icon: Calendar,
+                    variant: "outline",
+                  },
+                ]}
+              />
             </motion.div>
           ) : (
             <motion.form
@@ -69,23 +105,53 @@ const ContactPage = () => {
             >
               <div className="space-y-2">
                 <Label htmlFor="name">Nume *</Label>
-                <Input id="name" name="name" placeholder="Numele tău" required />
+                <Input
+                  id="name"
+                  name="name"
+                  placeholder="Numele tău"
+                  required
+                />
               </div>
               <div className="space-y-2">
                 <Label htmlFor="email">Email *</Label>
-                <Input id="email" name="email" type="email" placeholder="adresa@email.com" required />
+                <Input
+                  id="email"
+                  name="email"
+                  type="email"
+                  placeholder="adresa@email.com"
+                  required
+                />
               </div>
               <div className="space-y-2">
                 <Label htmlFor="phone">Număr de telefon</Label>
-                <Input id="phone" name="phone" type="tel" placeholder="+40 ..." />
+                <Input
+                  id="phone"
+                  name="phone"
+                  type="tel"
+                  placeholder="+40 ..."
+                />
               </div>
               <div className="space-y-2">
                 <Label htmlFor="message">Mesajul tău *</Label>
-                <Textarea id="message" name="message" placeholder="Scrie mesajul tău aici..." rows={5} required />
+                <Textarea
+                  id="message"
+                  name="message"
+                  placeholder="Scrie mesajul tău aici..."
+                  rows={5}
+                  required
+                />
               </div>
-              <Button type="submit" disabled={loading} className="w-full bg-primary hover:bg-navy-dark text-primary-foreground font-semibold">
-                {loading ? "Se trimite..." : (
-                  <>Trimite mesajul <Send className="ml-2 h-4 w-4" /></>
+              <Button
+                type="submit"
+                disabled={loading}
+                className="w-full bg-primary hover:bg-navy-dark text-primary-foreground font-semibold"
+              >
+                {loading ? (
+                  "Se trimite..."
+                ) : (
+                  <>
+                    Trimite mesajul <Send className="ml-2 h-4 w-4" />
+                  </>
                 )}
               </Button>
             </motion.form>
