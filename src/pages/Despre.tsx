@@ -310,7 +310,7 @@ const DespreePage = () => (
     </section>
 
     {/* ── Section 5: Cui se adresează ── */}
-    <section className="py-16 md:py-24">
+    <section className="py-16 md:py-24 section-dots section-vignette">
       <motion.div
         variants={fadeUp}
         initial="hidden"
