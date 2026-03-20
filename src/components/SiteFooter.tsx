@@ -10,7 +10,8 @@ const SiteFooter = () => (
             Ateliere de Predicare Expozitivă
           </h3>
           <p className="text-sm opacity-80 leading-relaxed">
-            În parteneriat cu Charles Simeon Trust, formăm următoarea generație de predicatori expozitivi în România.
+            În parteneriat cu Charles Simeon Trust, formăm următoarea generație
+            de predicatori expozitivi în România.
           </p>
         </div>
         <div>
@@ -18,10 +19,36 @@ const SiteFooter = () => (
             Navigare
           </h4>
           <div className="flex flex-col gap-2 text-sm">
-            <Link to="/despre" className="opacity-80 hover:opacity-100 transition-opacity">Despre</Link>
-            <Link to="/evenimente" className="opacity-80 hover:opacity-100 transition-opacity">Evenimente</Link>
-            <Link to="/resurse" className="opacity-80 hover:opacity-100 transition-opacity">Resurse</Link>
-            <Link to="/contact" className="opacity-80 hover:opacity-100 transition-opacity">Contact</Link>
+            <Link
+              to="/evenimente"
+              className="opacity-80 hover:opacity-100 transition-opacity"
+            >
+              Evenimente
+            </Link>
+            <Link
+              to="/resurse"
+              className="opacity-80 hover:opacity-100 transition-opacity"
+            >
+              Resurse
+            </Link>
+            <Link
+              to="/despre"
+              className="opacity-80 hover:opacity-100 transition-opacity"
+            >
+              Despre
+            </Link>
+            <Link
+              to="/contact"
+              className="opacity-80 hover:opacity-100 transition-opacity"
+            >
+              Contact
+            </Link>
+            <Link
+              to="/abonare"
+              className="opacity-80 hover:opacity-100 transition-opacity"
+            >
+              Abonare
+            </Link>
           </div>
         </div>
         <div>

@@ -8,6 +8,7 @@ import Despre from "./pages/Despre.tsx";
 import Evenimente from "./pages/Evenimente.tsx";
 import Resurse from "./pages/Resurse.tsx";
 import Contact from "./pages/Contact.tsx";
+import Abonare from "./pages/Abonare.tsx";
 import Ghid from "./pages/Ghid.tsx";
 import Fisa from "./pages/Fisa.tsx";
 import PrintPreview from "./pages/PrintPreview.tsx";
@@ -32,15 +33,44 @@ const App = () => (
           <Route path="/evenimente" element={<Evenimente />} />
           <Route path="/resurse" element={<Resurse />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/abonare" element={<Abonare />} />
           <Route path="/ghid" element={<Ghid />} />
           <Route path="/fisa" element={<Fisa />} />
           <Route path="/print-preview" element={<PrintPreview />} />
 
           {/* Event sub-sites */}
-          <Route path="/events/:eventId" element={<EventLayout><EventHub /></EventLayout>} />
-          <Route path="/events/:eventId/participanti" element={<EventLayout><EventParticipanti /></EventLayout>} />
-          <Route path="/events/:eventId/grupe" element={<EventLayout><EventGrupe /></EventLayout>} />
-          <Route path="/events/:eventId/orar" element={<EventLayout><EventOrar /></EventLayout>} />
+          <Route
+            path="/events/:eventId"
+            element={
+              <EventLayout>
+                <EventHub />
+              </EventLayout>
+            }
+          />
+          <Route
+            path="/events/:eventId/participanti"
+            element={
+              <EventLayout>
+                <EventParticipanti />
+              </EventLayout>
+            }
+          />
+          <Route
+            path="/events/:eventId/grupe"
+            element={
+              <EventLayout>
+                <EventGrupe />
+              </EventLayout>
+            }
+          />
+          <Route
+            path="/events/:eventId/orar"
+            element={
+              <EventLayout>
+                <EventOrar />
+              </EventLayout>
+            }
+          />
 
           <Route path="*" element={<NotFound />} />
         </Routes>
