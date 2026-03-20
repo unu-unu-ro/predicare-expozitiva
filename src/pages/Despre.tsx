@@ -11,12 +11,16 @@ const galleryModules = import.meta.glob<{ default: string }>(
   "@/assets/gallery/*.{jpeg,jpg,png,webp}",
   { eager: true },
 );
-const galleryImages = Object.keys(galleryModules)
-  .sort()
-  .map((path) => ({
-    src: galleryModules[path].default,
-    alt: "Foto atelier CST",
-  }));
+const galleryImages = Object.keys(galleryModules).map((path) => ({
+  src: galleryModules[path].default,
+  alt: "Foto atelier CST",
+}));
+
+// Fisher-Yates shuffle so photos appear in a different order on each refresh
+for (let i = galleryImages.length - 1; i > 0; i--) {
+  const j = Math.floor(Math.random() * (i + 1));
+  [galleryImages[i], galleryImages[j]] = [galleryImages[j], galleryImages[i]];
+}
 
 const testimonials = [
   {

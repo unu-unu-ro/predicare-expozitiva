@@ -116,39 +116,39 @@ const EvenimentePage = () => {
               </div>
             ) : (
               <>
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }}
-                className="bg-card rounded-xl border border-border p-6 text-center space-y-2"
-              >
-                <Calendar className="mx-auto text-accent" size={28} />
-                <h3 className="font-display text-lg font-semibold text-foreground">
-                  Niciun eveniment viitor programat
-                </h3>
-                <p className="text-sm text-muted-foreground">
-                  Urmărește această pagină pentru următoarele ateliere.
-                </p>
-              </motion.div>
-              <FeaturePlugs
-                heading="Între timp, explorează"
-                subtext="Descoperă resurse utile sau află mai multe despre atelierele noastre."
-                plugs={[
-                  {
-                    title: "Vezi resursele",
-                    description: "",
-                    to: "/resurse",
-                    icon: BookOpen,
-                  },
-                  {
-                    title: "Despre ateliere",
-                    description: "",
-                    to: "/despre",
-                    icon: Info,
-                    variant: "outline",
-                  },
-                ]}
-              />
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5 }}
+                  className="bg-card rounded-xl border border-border p-6 text-center space-y-2"
+                >
+                  <Calendar className="mx-auto text-accent" size={28} />
+                  <h3 className="font-display text-lg font-semibold text-foreground">
+                    Niciun eveniment viitor programat
+                  </h3>
+                  <p className="text-sm text-muted-foreground">
+                    Urmărește această pagină pentru următoarele ateliere.
+                  </p>
+                </motion.div>
+                <FeaturePlugs
+                  heading="Între timp, explorează"
+                  subtext="Descoperă resurse utile sau află mai multe despre atelierele noastre."
+                  plugs={[
+                    {
+                      title: "Vezi resursele",
+                      description: "",
+                      to: "/resurse",
+                      icon: BookOpen,
+                    },
+                    {
+                      title: "Despre ateliere",
+                      description: "",
+                      to: "/despre",
+                      icon: Info,
+                      variant: "outline",
+                    },
+                  ]}
+                />
               </>
             )}
 
