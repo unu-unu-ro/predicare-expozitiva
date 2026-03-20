@@ -1,18 +1,17 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import Layout from "@/components/Layout";
 import HeroBanner from "@/components/HeroBanner";
 import SEOHead from "@/components/SEOHead";
-import FeaturePlugs from "@/components/FeaturePlugs";
+import { Button } from "@/components/ui/button";
 import {
   MapPin,
   Calendar,
   ArrowRight,
   Loader2,
-  BookOpen,
-  Info,
+  Bell,
 } from "lucide-react";
-import type { FeaturePlug } from "@/components/FeaturePlugs";
 import {
   Accordion,
   AccordionContent,
@@ -115,41 +114,20 @@ const EvenimentePage = () => {
                 ))}
               </div>
             ) : (
-              <>
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5 }}
-                  className="bg-card rounded-xl border border-border p-6 text-center space-y-2"
-                >
-                  <Calendar className="mx-auto text-accent" size={28} />
-                  <h3 className="font-display text-lg font-semibold text-foreground">
-                    Niciun eveniment viitor programat
-                  </h3>
-                  <p className="text-sm text-muted-foreground">
-                    Urmărește această pagină pentru următoarele ateliere.
-                  </p>
-                </motion.div>
-                <FeaturePlugs
-                  heading="Între timp, explorează"
-                  subtext="Descoperă resurse utile sau află mai multe despre atelierele noastre."
-                  plugs={[
-                    {
-                      title: "Vezi resursele",
-                      description: "",
-                      to: "/resurse",
-                      icon: BookOpen,
-                    },
-                    {
-                      title: "Despre ateliere",
-                      description: "",
-                      to: "/despre",
-                      icon: Info,
-                      variant: "outline",
-                    },
-                  ]}
-                />
-              </>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+                className="bg-card rounded-xl border border-border p-6 text-center space-y-2"
+              >
+                <Calendar className="mx-auto text-accent" size={28} />
+                <h3 className="font-display text-lg font-semibold text-foreground">
+                  Niciun eveniment viitor programat
+                </h3>
+                <p className="text-sm text-muted-foreground">
+                  Urmărește această pagină pentru următoarele ateliere.
+                </p>
+              </motion.div>
             )}
 
             {/* Past */}
@@ -169,6 +147,31 @@ const EvenimentePage = () => {
                 </AccordionItem>
               </Accordion>
             )}
+
+            {/* Subscribe CTA */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="mt-10 rounded-xl border border-accent/20 bg-gradient-to-br from-accent/5 to-transparent px-6 py-5 text-center space-y-2"
+            >
+              <Bell className="mx-auto text-accent" size={24} />
+              <h3 className="font-display text-lg font-semibold text-foreground">
+                Nu rata următorul atelier
+              </h3>
+              <p className="text-sm text-muted-foreground max-w-md mx-auto">
+                Abonează-te pentru a primi notificări despre evenimentele
+                viitoare, resurse noi și noutăți din comunitate.
+              </p>
+              <div className="pt-1">
+                <Button
+                  asChild
+                  className="bg-primary hover:bg-[hsl(var(--navy-dark))] text-primary-foreground"
+                >
+                  <Link to="/abonare">Abonează-te</Link>
+                </Button>
+              </div>
+            </motion.div>
           </>
         )}
       </section>
