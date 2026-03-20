@@ -1,11 +1,11 @@
 import { useState, useEffect, useCallback } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
 import Layout from "@/components/Layout";
 import HeroBanner from "@/components/HeroBanner";
 import SEOHead from "@/components/SEOHead";
 import { Button } from "@/components/ui/button";
-import { ChevronLeft, ChevronRight, Quote } from "lucide-react";
+import { ChevronLeft, ChevronRight, Quote, X } from "lucide-react";
 
 import photo01 from "@/assets/gallery/photo-01.jpeg";
 import photo02 from "@/assets/gallery/photo-02.jpeg";
@@ -150,7 +150,22 @@ const TestimonialCarousel = () => {
   );
 };
 
-const DespreePage = () => (
+const DespreePage = () => {
+  const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
+
+  useEffect(() => {
+    if (lightboxIndex === null) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setLightboxIndex(null);
+      if (e.key === "ArrowRight") setLightboxIndex((p) => (p !== null ? (p + 1) % galleryImages.length : null));
+      if (e.key === "ArrowLeft") setLightboxIndex((p) => (p !== null ? (p - 1 + galleryImages.length) % galleryImages.length : null));
+    };
+    document.body.style.overflow = "hidden";
+    window.addEventListener("keydown", onKey);
+    return () => { window.removeEventListener("keydown", onKey); document.body.style.overflow = ""; };
+  }, [lightboxIndex]);
+
+  return (
   <Layout>
     <SEOHead
       title="Despre Ateliere"
@@ -196,14 +211,18 @@ const DespreePage = () => (
 
         <div className="flex gap-3 animate-marquee hover:[animation-play-state:paused]">
           {[...galleryImages, ...galleryImages].map((img, i) => (
-            <div key={i} className="flex-shrink-0 w-48 sm:w-64 aspect-[3/2] rounded-lg overflow-hidden">
+            <button
+              key={i}
+              onClick={() => setLightboxIndex(i % galleryImages.length)}
+              className="flex-shrink-0 w-48 sm:w-64 aspect-[3/2] rounded-lg overflow-hidden cursor-pointer focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2"
+            >
               <img
                 src={img.src}
                 alt={img.alt}
                 className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
                 loading="lazy"
               />
-            </div>
+            </button>
           ))}
         </div>
       </div>
@@ -369,7 +388,61 @@ const DespreePage = () => (
         </div>
       </motion.div>
     </section>
-  </Layout>
-);
+      {/* ── Lightbox ── */}
+      <AnimatePresence>
+        {lightboxIndex !== null && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-sm"
+            onClick={() => setLightboxIndex(null)}
+          >
+            <button
+              onClick={() => setLightboxIndex(null)}
+              className="absolute top-4 right-4 p-2 rounded-full text-white/70 hover:text-white hover:bg-white/10 transition-colors z-10"
+              aria-label="Închide"
+            >
+              <X className="w-6 h-6" />
+            </button>
+
+            <button
+              onClick={(e) => { e.stopPropagation(); setLightboxIndex((lightboxIndex - 1 + galleryImages.length) % galleryImages.length); }}
+              className="absolute left-2 sm:left-6 p-2 rounded-full text-white/70 hover:text-white hover:bg-white/10 transition-colors z-10"
+              aria-label="Poza anterioară"
+            >
+              <ChevronLeft className="w-8 h-8" />
+            </button>
+
+            <motion.img
+              key={lightboxIndex}
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.9 }}
+              transition={{ duration: 0.25 }}
+              src={galleryImages[lightboxIndex].src}
+              alt={galleryImages[lightboxIndex].alt}
+              className="max-h-[85vh] max-w-[90vw] object-contain rounded-lg shadow-2xl"
+              onClick={(e) => e.stopPropagation()}
+            />
+
+            <button
+              onClick={(e) => { e.stopPropagation(); setLightboxIndex((lightboxIndex + 1) % galleryImages.length); }}
+              className="absolute right-2 sm:right-6 p-2 rounded-full text-white/70 hover:text-white hover:bg-white/10 transition-colors z-10"
+              aria-label="Poza următoare"
+            >
+              <ChevronRight className="w-8 h-8" />
+            </button>
+
+            <div className="absolute bottom-4 text-white/50 text-sm">
+              {lightboxIndex + 1} / {galleryImages.length}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </Layout>
+  );
+};
 
 export default DespreePage;
