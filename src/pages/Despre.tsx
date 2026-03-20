@@ -42,9 +42,21 @@ const galleryImages = [
 const steps = [
   { num: 1, title: "Structura textuală", desc: "Identifică structura literară și fluxul argumentului în pasaj." },
   { num: 2, title: "Contextul", desc: "Înțelege contextul literar, istoric și teologic al pasajului." },
-  { num: 3, title: "Ideea centrală a autorului (ACI)", desc: "Formulează într-o propoziție ceea ce autorul biblic comunică în acest pasaj." },
-  { num: 4, title: "Legătura cu Evanghelia", desc: "Identifică cum pasajul se conectează cu persoana și lucrarea lui Cristos." },
-  { num: 5, title: "Ideea centrală a predicatorului (PCI)", desc: "Reformulează ideea autorului într-un mod relevant pentru ascultătorii de astăzi." },
+  {
+    num: 3,
+    title: "Ideea centrală a autorului (ACI)",
+    desc: "Formulează într-o propoziție ceea ce autorul biblic comunică în acest pasaj.",
+  },
+  {
+    num: 4,
+    title: "Legătura cu Evanghelia",
+    desc: "Identifică cum pasajul se conectează cu persoana și lucrarea lui Cristos.",
+  },
+  {
+    num: 5,
+    title: "Ideea centrală a predicatorului (PCI)",
+    desc: "Reformulează ideea autorului într-un mod relevant pentru ascultătorii de astăzi.",
+  },
   { num: 6, title: "Aplicații", desc: "Dezvoltă aplicații concrete care decurg din textul biblic." },
   { num: 7, title: "Titlu și schiță", desc: "Formulează un titlu captivant și o schiță logică pentru predică." },
 ];
@@ -78,10 +90,7 @@ const TestimonialCarousel = () => {
   const [current, setCurrent] = useState(0);
   const total = testimonials.length;
 
-  const goTo = useCallback(
-    (index: number) => setCurrent(((index % total) + total) % total),
-    [total]
-  );
+  const goTo = useCallback((index: number) => setCurrent(((index % total) + total) % total), [total]);
 
   useEffect(() => {
     const timer = setInterval(() => goTo(current + 1), 7000);
@@ -102,9 +111,7 @@ const TestimonialCarousel = () => {
                 <p className="text-base sm:text-lg text-muted-foreground italic leading-relaxed font-light">
                   „{t.text}"
                 </p>
-                <footer className="text-sm font-semibold text-accent tracking-wide uppercase">
-                  — {t.author}
-                </footer>
+                <footer className="text-sm font-semibold text-accent tracking-wide uppercase">— {t.author}</footer>
               </div>
             </blockquote>
           ))}
@@ -150,10 +157,7 @@ const DespreePage = () => (
       description="Descoperă ce este un Atelier de Predicare Expozitivă, metodologia în 7 pași și cum te poți implica în formarea predicatorilor din România."
       path="/despre"
     />
-    <HeroBanner
-      title="Despre Ateliere"
-      subtitle="Ce este un Atelier de Predicare Expozitivă?"
-    />
+    <HeroBanner title="Despre Ateliere" subtitle="Ce este un Atelier de Predicare Expozitivă?" />
 
     {/* ── Section 1: Misiune ── */}
     <section className="py-16 md:py-24">
@@ -173,12 +177,12 @@ const DespreePage = () => (
           >
             Charles Simeon Trust
           </a>{" "}
-          formează următoarea generație de predicatori expozitivi prin ateliere practice, cursuri
-          online și programe intensive.
+          formează următoarea generație de predicatori expozitivi prin ateliere practice, cursuri online și programe
+          intensive.
         </p>
         <p className="text-muted-foreground leading-relaxed">
-          Organizăm aceste ateliere în România folosind integral metoda și materialele lor. Scopul:
-          să crească încrederea și abilitatea participanților de a mânui corect Cuvântul lui Dumnezeu.
+          Organizăm aceste ateliere în România folosind integral metoda și materialele lor. Scopul: să crească
+          încrederea și abilitatea participanților de a mânui corect Cuvântul lui Dumnezeu.
         </p>
         <div className="gold-divider mx-auto" />
       </motion.div>
@@ -192,10 +196,7 @@ const DespreePage = () => (
 
         <div className="flex gap-3 animate-marquee hover:[animation-play-state:paused]">
           {[...galleryImages, ...galleryImages].map((img, i) => (
-            <div
-              key={i}
-              className="flex-shrink-0 w-48 sm:w-64 aspect-[3/2] rounded-lg overflow-hidden"
-            >
+            <div key={i} className="flex-shrink-0 w-48 sm:w-64 aspect-[3/2] rounded-lg overflow-hidden">
               <img
                 src={img.src}
                 alt={img.alt}
@@ -229,18 +230,12 @@ const DespreePage = () => (
           className="space-y-6"
         >
           {steps.map((step) => (
-            <motion.div
-              key={step.num}
-              variants={fadeUp}
-              className="flex gap-5 items-start group"
-            >
+            <motion.div key={step.num} variants={fadeUp} className="flex gap-5 items-start group">
               <div className="flex-shrink-0 w-12 h-12 rounded-full bg-accent/10 text-accent font-display font-bold flex items-center justify-center text-xl group-hover:bg-accent group-hover:text-accent-foreground transition-colors duration-300">
                 {step.num}
               </div>
               <div className="pt-1">
-                <h3 className="font-display font-semibold text-foreground text-lg">
-                  {step.title}
-                </h3>
+                <h3 className="font-display font-semibold text-foreground text-lg">{step.title}</h3>
                 <p className="text-muted-foreground mt-1">{step.desc}</p>
               </div>
             </motion.div>
@@ -278,31 +273,23 @@ const DespreePage = () => (
             {
               icon: "👥",
               title: "Grupuri mici",
-              desc: "Vei fi repartizat într-un grup de 4–6 participanți, ghidat de un lider experimentat, unde vei prezenta și primi feedback.",
+              desc: "Vei fi repartizat într-un grup de 10 participanți, ghidat de un lider experimentat, unde vei prezenta și primi feedback.",
             },
             {
               icon: "📝",
-              title: "Sesiuni de lucru",
-              desc: "Fiecare sesiune durează ~90 minute. Vei fi atât prezentator, cât și respondent.",
+              title: "Expuneri - predici",
+              desc: "Momente cheie de expunere a participanților la predicarea sănătoasă a Cuvântului",
             },
             {
               icon: "🎤",
-              title: "Sesiuni plenare",
-              desc: "Predici model, demonstrații de analiză a textului și sesiuni interactive de Q&A.",
+              title: "Sesiuni de instruire",
+              desc: "Sesiuni plenare de intruire și însușire a principiilor de lucru pe textul Scripturii",
             },
           ].map((item) => (
-            <motion.div
-              key={item.title}
-              variants={fadeUp}
-              className="space-y-3"
-            >
+            <motion.div key={item.title} variants={fadeUp} className="space-y-3">
               <span className="text-3xl">{item.icon}</span>
-              <h3 className="font-display font-semibold text-foreground text-lg">
-                {item.title}
-              </h3>
-              <p className="text-muted-foreground leading-relaxed text-sm">
-                {item.desc}
-              </p>
+              <h3 className="font-display font-semibold text-foreground text-lg">{item.title}</h3>
+              <p className="text-muted-foreground leading-relaxed text-sm">{item.desc}</p>
             </motion.div>
           ))}
         </motion.div>
@@ -320,24 +307,19 @@ const DespreePage = () => (
       >
         <h2 className="section-title">Cui se adresează?</h2>
         <p className="text-muted-foreground">
-          Atelierele sunt deschise tuturor celor care doresc să crească în abilitatea de a studia și
-          prezenta Scriptura cu fidelitate:
+          Atelierele sunt deschise tuturor celor care doresc să crească în abilitatea de a studia și prezenta Scriptura
+          cu fidelitate:
         </p>
         <div className="flex flex-wrap justify-center gap-3">
           {["Păstori și predicatori", "Lideri de studii biblice", "Studenți la teologie", "Pasionați de predicare"].map(
             (tag) => (
-              <span
-                key={tag}
-                className="px-4 py-2 rounded-full bg-accent/10 text-accent text-sm font-medium"
-              >
+              <span key={tag} className="px-4 py-2 rounded-full bg-accent/10 text-accent text-sm font-medium">
                 {tag}
               </span>
-            )
+            ),
           )}
         </div>
-        <p className="text-sm text-muted-foreground/70">
-          Nu este necesar să ai experiență anterioară în predicare.
-        </p>
+        <p className="text-sm text-muted-foreground/70">Nu este necesar să ai experiență anterioară în predicare.</p>
       </motion.div>
     </section>
 
@@ -353,12 +335,7 @@ const DespreePage = () => (
         >
           Ce spun participanții
         </motion.h2>
-        <motion.div
-          variants={fadeUp}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-        >
+        <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
           <TestimonialCarousel />
         </motion.div>
       </div>
