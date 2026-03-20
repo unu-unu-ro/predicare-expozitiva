@@ -7,37 +7,16 @@ import SEOHead from "@/components/SEOHead";
 import { Button } from "@/components/ui/button";
 import { ChevronLeft, ChevronRight, Quote, X } from "lucide-react";
 
-import photo01 from "@/assets/gallery/photo-01.jpeg";
-import photo02 from "@/assets/gallery/photo-02.jpeg";
-import photo03 from "@/assets/gallery/photo-03.jpeg";
-import photo04 from "@/assets/gallery/photo-04.jpeg";
-import photo05 from "@/assets/gallery/photo-05.jpeg";
-import photo06 from "@/assets/gallery/photo-06.jpeg";
-import photo07 from "@/assets/gallery/photo-07.jpeg";
-import photo08 from "@/assets/gallery/photo-08.jpeg";
-import photo09 from "@/assets/gallery/photo-09.jpeg";
-import photo10 from "@/assets/gallery/photo-10.jpeg";
-import photo11 from "@/assets/gallery/photo-11.jpeg";
-import photo12 from "@/assets/gallery/photo-12.jpeg";
-import photo13 from "@/assets/gallery/photo-13.jpeg";
-import photo14 from "@/assets/gallery/photo-14.jpeg";
-
-const galleryImages = [
-  { src: photo01, alt: "Predicare la atelier" },
-  { src: photo02, alt: "Lucru în grup mic" },
-  { src: photo03, alt: "Studiu biblic în grup" },
-  { src: photo04, alt: "Sesiune de lucru" },
-  { src: photo05, alt: "Grup de lucru" },
-  { src: photo06, alt: "Discuții în grup mic" },
-  { src: photo07, alt: "Sesiune plenară" },
-  { src: photo08, alt: "Foto de grup participanți" },
-  { src: photo09, alt: "Predicare în sesiune plenară" },
-  { src: photo10, alt: "Sesiune plenară - privire de ansamblu" },
-  { src: photo11, alt: "Moment de rugăciune" },
-  { src: photo12, alt: "Predare la amvon" },
-  { src: photo13, alt: "Predicator la amvon" },
-  { src: photo14, alt: "Foto de grup – toți participanții" },
-];
+const galleryModules = import.meta.glob<{ default: string }>(
+  "@/assets/gallery/*.{jpeg,jpg,png,webp}",
+  { eager: true },
+);
+const galleryImages = Object.keys(galleryModules)
+  .sort()
+  .map((path) => ({
+    src: galleryModules[path].default,
+    alt: "Foto atelier CST",
+  }));
 
 const testimonials = [
   {
