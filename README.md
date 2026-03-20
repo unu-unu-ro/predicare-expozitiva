@@ -1,6 +1,6 @@
 # Predicare Expozitivă
 
-Site-ul oficial al atelierelor de predicare expozitivă din România, organizate în parteneriat cu [Charles Simeon Trust](https://simeontrust.org/).
+Site-ul atelierelor de predicare expozitivă din România, organizate în parteneriat cu [Charles Simeon Trust](https://simeontrust.org/).
 
 Atelierele echipează predicatori, păstori și lideri de studii biblice cu instrumente practice pentru a mânui corect Cuvântul lui Dumnezeu, folosind o metodologie sistematică în 7 pași — de la analiza structurii textuale până la formularea unei predici expozitive.
 
