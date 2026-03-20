@@ -1,11 +1,11 @@
 import { useState, useEffect, useCallback } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
 import Layout from "@/components/Layout";
 import HeroBanner from "@/components/HeroBanner";
 import SEOHead from "@/components/SEOHead";
 import { Button } from "@/components/ui/button";
-import { ChevronLeft, ChevronRight, Quote } from "lucide-react";
+import { ChevronLeft, ChevronRight, Quote, X } from "lucide-react";
 
 import photo01 from "@/assets/gallery/photo-01.jpeg";
 import photo02 from "@/assets/gallery/photo-02.jpeg";
