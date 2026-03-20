@@ -209,7 +209,7 @@ const DespreePage = () => (
     </section>
 
     {/* ── Section 3: Cei 7 Pași ── */}
-    <section className="py-16 md:py-24">
+    <section className="py-16 md:py-24 section-dots section-vignette">
       <div className="max-w-3xl mx-auto px-5">
         <motion.h2
           variants={fadeUp}
