@@ -150,7 +150,22 @@ const TestimonialCarousel = () => {
   );
 };
 
-const DespreePage = () => (
+const DespreePage = () => {
+  const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
+
+  useEffect(() => {
+    if (lightboxIndex === null) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setLightboxIndex(null);
+      if (e.key === "ArrowRight") setLightboxIndex((p) => (p !== null ? (p + 1) % galleryImages.length : null));
+      if (e.key === "ArrowLeft") setLightboxIndex((p) => (p !== null ? (p - 1 + galleryImages.length) % galleryImages.length : null));
+    };
+    document.body.style.overflow = "hidden";
+    window.addEventListener("keydown", onKey);
+    return () => { window.removeEventListener("keydown", onKey); document.body.style.overflow = ""; };
+  }, [lightboxIndex]);
+
+  return (
   <Layout>
     <SEOHead
       title="Despre Ateliere"
