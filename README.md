@@ -83,7 +83,7 @@ Create a `.env.local` file at the project root:
 
 ```
 BREVO_API_KEY=your_api_key
-BREVO_LIST_ID=2
+BREVO_LIST_ID=your_list_id
 ```
 
 Or pull from Vercel directly:
