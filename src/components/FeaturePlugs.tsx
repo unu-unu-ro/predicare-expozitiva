@@ -42,7 +42,11 @@ const FeaturePlugs = ({ heading, subtext, plugs }: FeaturePlugsProps) => (
                 : "border-primary text-primary hover:bg-primary hover:text-primary-foreground"
             }
           >
+            {plug.to.startsWith("http") ? (
+            <a href={plug.to} target="_blank" rel="noopener noreferrer">{plug.title}</a>
+          ) : (
             <Link to={plug.to}>{plug.title}</Link>
+          )}
           </Button>
         );
       })}

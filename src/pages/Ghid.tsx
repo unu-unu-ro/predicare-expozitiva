@@ -924,7 +924,7 @@ const GhidPage = () => {
                 {
                   title: "Fișa interactivă",
                   description: "",
-                  to: "/fisa",
+                  to: "https://fisa.predicare-expozitiva.ro",
                   icon: FileText,
                 },
                 {

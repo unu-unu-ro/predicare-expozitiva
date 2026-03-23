@@ -5,13 +5,7 @@ import Layout from "@/components/Layout";
 import HeroBanner from "@/components/HeroBanner";
 import SEOHead from "@/components/SEOHead";
 import { Button } from "@/components/ui/button";
-import {
-  MapPin,
-  Calendar,
-  ArrowRight,
-  Loader2,
-  Bell,
-} from "lucide-react";
+import { MapPin, Calendar, ArrowRight, Loader2, Bell } from "lucide-react";
 import {
   Accordion,
   AccordionContent,

@@ -26,8 +26,8 @@ const sections = [
       {
         title: "Fișa interactivă",
         desc: "Completează online cei 7 pași ai fișei de lucru pentru predicarea expozitivă și generează PDF.",
-        url: "/fisa",
-        external: false,
+        url: "https://fisa.predicare-expozitiva.ro",
+        external: true,
       },
     ],
   },

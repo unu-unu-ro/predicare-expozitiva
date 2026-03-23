@@ -10,8 +10,6 @@ import Resurse from "./pages/Resurse.tsx";
 import Contact from "./pages/Contact.tsx";
 import Abonare from "./pages/Abonare.tsx";
 import Ghid from "./pages/Ghid.tsx";
-import Fisa from "./pages/Fisa.tsx";
-import PrintPreview from "./pages/PrintPreview.tsx";
 import EventLayout from "./pages/events/EventLayout.tsx";
 import EventHub from "./pages/events/EventHub.tsx";
 import EventParticipanti from "./pages/events/EventParticipanti.tsx";
@@ -35,8 +33,6 @@ const App = () => (
           <Route path="/contact" element={<Contact />} />
           <Route path="/abonare" element={<Abonare />} />
           <Route path="/ghid" element={<Ghid />} />
-          <Route path="/fisa" element={<Fisa />} />
-          <Route path="/print-preview" element={<PrintPreview />} />
 
           {/* Event sub-sites */}
           <Route
