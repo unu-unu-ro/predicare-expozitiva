@@ -13,6 +13,7 @@ Atelierele echipează predicatori, păstori și lideri de studii biblice cu inst
 - **Framer Motion** — animations
 - **React Router** — client-side routing
 - **Formspree** — contact form backend
+- **Brevo** — newsletter / email list for subscriptions
 
 ## 📁 Project Structure
 
@@ -44,9 +45,9 @@ public/
 | `/evenimente` | List of upcoming and past events |
 | `/events/{id}` | Event micro-site with schedule, participants, and small groups |
 | `/ghid` | Guide for participants |
-| `/fisa` | Worksheet (fișa de lucru) |
 | `/resurse` | Additional resources |
 | `/contact` | Contact form (Formspree) |
+| `/abonare` | Newsletter sign-up (Brevo) |
 
 ## 🚀 Getting Started
 
@@ -75,7 +76,11 @@ Workshop photos are stored in `src/assets/gallery/` and displayed as an auto-scr
 
 ## 📬 Contact Form
 
-The contact form uses [Formspree](https://formspree.io). Form submissions are delivered to the connected Formspree inbox. The form ID is configured directly in `src/pages/Contact.tsx`.
+The contact form on `/contact` uses [Formspree](https://formspree.io). When a visitor submits the form, Formspree handles delivery (email notification, spam filtering) without requiring a custom backend. The form endpoint ID is configured directly in `src/pages/Contact.tsx`.
+
+## 📧 Newsletter / Abonare
+
+The subscription form on `/abonare` uses [Brevo](https://www.brevo.com) (formerly Sendinblue). Visitors who sign up are added to a Brevo contact list, which can then be used to send newsletters or announcements. The API key and list ID are referenced in the serverless API route (`api/subscribe.ts` / `api/subscribe.js`) and should be stored as environment variables — never hardcoded in the client.
 
 ## 📄 License
 
