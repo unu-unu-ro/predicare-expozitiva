@@ -1,5 +1,8 @@
+'use client';
+
 import { motion } from "framer-motion";
-import heroBg from "@/assets/hero-bible.jpg";
+
+const heroBg = "/hero-bible.jpg";
 
 interface HeroBannerProps {
   title: string;

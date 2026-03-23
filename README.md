@@ -6,32 +6,47 @@ Atelierele echipează predicatori, păstori și lideri de studii biblice cu inst
 
 ## 🛠 Tech Stack
 
-- **React 18** + **TypeScript**
-- **Vite** — build & dev server
+- **Next.js 14** (App Router) + **TypeScript**
 - **Tailwind CSS** — utility-first styling
 - **shadcn/ui** — component library (Radix primitives)
 - **Framer Motion** — animations
-- **React Router** — client-side routing
 - **Formspree** — contact form backend
 - **Brevo** — newsletter / email list for subscriptions
 
 ## 📁 Project Structure
 
 ```
+app/
+├── page.tsx                    # Home (metadata)
+├── HomePage.tsx                # Home page component
+├── layout.tsx                  # Root layout (fonts, providers)
+├── globals.css                 # Global styles
+├── not-found.tsx               # 404 page
+├── {route}/
+│   ├── page.tsx                # Metadata (server component)
+│   └── {Route}Page.tsx         # UI component (client component)
+├── events/[eventId]/
+│   ├── EventLayout.tsx         # Event context provider + nav
+│   ├── EventHub.tsx            # Event landing card
+│   ├── layout.tsx              # Next.js layout wrapper
+│   ├── page.tsx                # Hub page
+│   ├── grupe/                  # Small groups sub-page
+│   ├── orar/                   # Schedule sub-page
+│   └── participanti/           # Participants sub-page
+└── api/subscribe/route.ts      # Brevo subscription API
+
 src/
-├── components/       # Shared UI components (Header, Footer, Layout, HeroBanner…)
-│   └── ui/           # shadcn/ui primitives
-├── pages/            # Route pages (Index, Evenimente, Contact, Despre…)
-│   └── events/       # Event micro-site (Hub, Orar, Participanți, Grupe)
-├── hooks/            # Custom React hooks
-├── assets/           # Static images & gallery photos
-│   └── gallery/      # Real workshop photos (marquee gallery on /despre)
-└── lib/              # Utility functions
+├── components/                 # Shared UI components (Header, Footer, Layout…)
+│   └── ui/                     # shadcn/ui primitives
+├── hooks/                      # Custom React hooks
+└── lib/                        # Utility functions (cn)
 
 public/
+├── gallery/                    # Workshop photos (marquee on /despre)
+├── hero-bible.jpg              # Hero image
 └── data/
-    ├── evenimente.json              # Global event registry & metadata
-    └── events/{EVENT_ID}/           # Per-event data
+    ├── evenimente.json         # Global event registry & metadata
+    └── events/{EVENT_ID}/      # Per-event data
         ├── participants.json
         └── orar.json
 ```
@@ -41,11 +56,11 @@ public/
 | Route | Description |
 |-------|-------------|
 | `/` | Landing page with hero banner and overview |
-| `/despre` | About the workshops — methodology, 7 steps, testimonials, photo gallery |
+| `/despre` | About the workshops — methodology, testimonials, photo gallery |
 | `/evenimente` | List of upcoming and past events |
 | `/events/{id}` | Event micro-site with schedule, participants, and small groups |
-| `/ghid` | Guide for participants |
-| `/resurse` | Additional resources |
+| `/ghid` | Preparation guide for participants |
+| `/resurse` | Recommended resources |
 | `/contact` | Contact form (Formspree) |
 | `/abonare` | Newsletter sign-up (Brevo) |
 
@@ -62,6 +77,21 @@ npm run dev
 npm run build
 ```
 
+## 🔑 Environment Variables
+
+Create a `.env.local` file at the project root:
+
+```
+BREVO_API_KEY=your_api_key
+BREVO_LIST_ID=2
+```
+
+Or pull from Vercel directly:
+
+```bash
+vercel env pull .env.local
+```
+
 ## ➕ Adding a New Event
 
 1. Add an entry in `public/data/evenimente.json` with a unique `eventId`, metadata, and Tally form URLs.
@@ -72,15 +102,15 @@ npm run build
 
 ## 🖼 Gallery Photos
 
-Workshop photos are stored in `src/assets/gallery/` and displayed as an auto-scrolling marquee on the `/despre` page. To add new photos, place them in that folder and add the corresponding import + entry in `src/pages/Despre.tsx`.
+Workshop photos are stored in `public/gallery/` and displayed as an auto-scrolling marquee on the `/despre` page. To add new photos, place them in that folder and update the count in `app/despre/DespreePage.tsx`.
 
 ## 📬 Contact Form
 
-The contact form on `/contact` uses [Formspree](https://formspree.io). When a visitor submits the form, Formspree handles delivery (email notification, spam filtering) without requiring a custom backend. The form endpoint ID is configured directly in `src/pages/Contact.tsx`.
+The contact form on `/contact` uses [Formspree](https://formspree.io). Formspree handles delivery without requiring a custom backend. The form endpoint ID is configured in `app/contact/ContactPage.tsx`.
 
 ## 📧 Newsletter / Abonare
 
-The subscription form on `/abonare` uses [Brevo](https://www.brevo.com) (formerly Sendinblue). Visitors who sign up are added to a Brevo contact list, which can then be used to send newsletters or announcements. The API key and list ID are referenced in the serverless API route (`api/subscribe.ts` / `api/subscribe.js`) and should be stored as environment variables — never hardcoded in the client.
+The subscription form on `/abonare` posts to the `/api/subscribe` route, which calls the [Brevo](https://www.brevo.com) API to add contacts to a list. The API key and list ID are stored as environment variables — never in client code.
 
 ## 📄 License
 

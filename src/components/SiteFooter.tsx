@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import Link from "next/link";
 
 const SiteFooter = () => (
   <footer className="bg-primary text-primary-foreground relative overflow-hidden">
@@ -20,31 +20,31 @@ const SiteFooter = () => (
           </h4>
           <div className="flex flex-col gap-2 text-sm">
             <Link
-              to="/evenimente"
+              href="/evenimente"
               className="opacity-80 hover:opacity-100 transition-opacity"
             >
               Evenimente
             </Link>
             <Link
-              to="/resurse"
+              href="/resurse"
               className="opacity-80 hover:opacity-100 transition-opacity"
             >
               Resurse
             </Link>
             <Link
-              to="/despre"
+              href="/despre"
               className="opacity-80 hover:opacity-100 transition-opacity"
             >
               Despre
             </Link>
             <Link
-              to="/contact"
+              href="/contact"
               className="opacity-80 hover:opacity-100 transition-opacity"
             >
               Contact
             </Link>
             <Link
-              to="/abonare"
+              href="/abonare"
               className="opacity-80 hover:opacity-100 transition-opacity"
             >
               Abonare

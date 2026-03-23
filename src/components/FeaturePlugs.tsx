@@ -1,4 +1,6 @@
-import { Link } from "react-router-dom";
+'use client';
+
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { type LucideIcon } from "lucide-react";
@@ -45,7 +47,7 @@ const FeaturePlugs = ({ heading, subtext, plugs }: FeaturePlugsProps) => (
             {plug.to.startsWith("http") ? (
             <a href={plug.to} target="_blank" rel="noopener noreferrer">{plug.title}</a>
           ) : (
-            <Link to={plug.to}>{plug.title}</Link>
+            <Link href={plug.to}>{plug.title}</Link>
           )}
           </Button>
         );
