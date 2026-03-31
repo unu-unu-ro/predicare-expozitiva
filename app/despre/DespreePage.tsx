@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import { useState, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -8,15 +8,24 @@ import HeroBanner from "@/components/HeroBanner";
 import { Button } from "@/components/ui/button";
 import { ChevronLeft, ChevronRight, Quote, X } from "lucide-react";
 
-const galleryImages = Array.from({ length: 14 }, (_, i) => ({
-  src: `/gallery/photo-${String(i + 1).padStart(2, "0")}.jpeg`,
-  alt: "Foto atelier CST",
-}));
+const allGalleryImages = [
+  ...Array.from({ length: 14 }, (_, i) => ({
+    src: `/gallery/photo-${String(i + 1).padStart(2, "0")}.jpeg`,
+    alt: "Foto atelier CST",
+  })),
+  ...Array.from({ length: 5 }, (_, i) => ({
+    src: `/gallery/CJ-${i + 1}.jpeg`,
+    alt: "Foto atelier CST",
+  })),
+];
 
-// Fisher-Yates shuffle so photos appear in a different order on each refresh
-for (let i = galleryImages.length - 1; i > 0; i--) {
-  const j = Math.floor(Math.random() * (i + 1));
-  [galleryImages[i], galleryImages[j]] = [galleryImages[j], galleryImages[i]];
+function shuffle<T>(arr: T[]): T[] {
+  const a = [...arr];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
 }
 
 const testimonials = [
@@ -31,6 +40,10 @@ const testimonials = [
   {
     text: "CST nu este un simplu seminar, este o echipare necesară pentru toți care știu că mai au de învățat. Instrumentele învățate sunt asemenea unei perechi de ochelari care înlătură ceața și îți aduce claritate în vedere.",
     author: "Ruben Bratu",
+  },
+  {
+    text: "Dacă consideri că a înțelege ceea ce vrea să spună Scriptura este important, dacă crezi că rolul unui predicator sau învățător al Bibliei are un mandat divin să predice mesajul Scripturii, dacă te vezi neputincios în a face acest lucru și vrei să înveți cum să o faci în mod consecvent, atunci îți recomand cu căldura seminariile organizate de Simeon Trust. Personal, după ce am participat pentru prima data la acest seminar, mi s-a schimbat radical modul în care ascult o predica și modul în care mă raportez la textul Biblic. Soli Deo Gloria!",
+    author: "Andrei Bușui",
   },
 ];
 
@@ -49,8 +62,13 @@ const staggerContainer = {
 };
 
 const TestimonialCarousel = () => {
+  const [items, setItems] = useState(testimonials);
+
+  useEffect(() => {
+    setItems(shuffle(testimonials));
+  }, []);
   const [current, setCurrent] = useState(0);
-  const total = testimonials.length;
+  const total = items.length;
 
   const goTo = useCallback(
     (index: number) => setCurrent(((index % total) + total) % total),
@@ -69,7 +87,7 @@ const TestimonialCarousel = () => {
           className="flex transition-transform duration-700 ease-in-out"
           style={{ transform: `translateX(-${current * 100}%)` }}
         >
-          {testimonials.map((t, i) => (
+          {items.map((t, i) => (
             <blockquote key={i} className="min-w-full px-2 box-border">
               <div className="text-center space-y-6 py-4">
                 <Quote className="mx-auto h-8 w-8 text-accent/40" />
@@ -94,7 +112,7 @@ const TestimonialCarousel = () => {
           <ChevronLeft className="w-5 h-5" />
         </button>
         <div className="flex gap-2">
-          {testimonials.map((_, i) => (
+          {items.map((_, i) => (
             <button
               key={i}
               onClick={() => setCurrent(i)}
@@ -118,7 +136,12 @@ const TestimonialCarousel = () => {
 };
 
 const DespreePage = () => {
+  const [galleryImages, setGalleryImages] = useState(allGalleryImages);
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
+
+  useEffect(() => {
+    setGalleryImages(shuffle(allGalleryImages));
+  }, []);
 
   useEffect(() => {
     if (lightboxIndex === null) return;
