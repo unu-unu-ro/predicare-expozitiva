@@ -8,16 +8,6 @@ import HeroBanner from "@/components/HeroBanner";
 import { Button } from "@/components/ui/button";
 import { ChevronLeft, ChevronRight, Quote, X } from "lucide-react";
 
-const allGalleryImages = [
-  ...Array.from({ length: 14 }, (_, i) => ({
-    src: `/gallery/photo-${String(i + 1).padStart(2, "0")}.jpeg`,
-    alt: "Foto atelier CST",
-  })),
-  ...Array.from({ length: 5 }, (_, i) => ({
-    src: `/gallery/CJ-${i + 1}.jpeg`,
-    alt: "Foto atelier CST",
-  })),
-];
 
 function shuffle<T>(arr: T[]): T[] {
   const a = [...arr];
@@ -136,11 +126,13 @@ const TestimonialCarousel = () => {
 };
 
 const DespreePage = () => {
-  const [galleryImages, setGalleryImages] = useState(allGalleryImages);
+  const [galleryImages, setGalleryImages] = useState<{ src: string; alt: string }[]>([]);
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
 
   useEffect(() => {
-    setGalleryImages(shuffle(allGalleryImages));
+    fetch("/api/gallery")
+      .then((r) => r.json())
+      .then((images) => setGalleryImages(shuffle(images)));
   }, []);
 
   useEffect(() => {
