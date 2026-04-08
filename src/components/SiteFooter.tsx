@@ -53,16 +53,34 @@ const SiteFooter = () => (
         </div>
         <div>
           <h4 className="font-display text-sm font-semibold mb-3 uppercase tracking-wider opacity-70">
-            Partener
+            Parteneri
           </h4>
-          <a
-            href="https://simeontrust.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-sm opacity-80 hover:opacity-100 transition-opacity underline underline-offset-2"
-          >
-            Charles Simeon Trust
-          </a>
+          <div className="flex flex-col gap-2">
+            <a
+              href="https://simeontrust.org/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm opacity-80 hover:opacity-100 transition-opacity underline underline-offset-2"
+            >
+              Charles Simeon Trust
+            </a>
+            <a
+              href="https://unu-unu.ro"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm opacity-80 hover:opacity-100 transition-opacity underline underline-offset-2"
+            >
+              Biserica Unu Unu, Cluj
+            </a>
+            <a
+              href="https://www.facebook.com/sfantatreimebraila"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm opacity-80 hover:opacity-100 transition-opacity underline underline-offset-2"
+            >
+              Biserica Sfânta Treime, Brăila
+            </a>
+          </div>
         </div>
       </div>
       <div className="mt-6 pt-4 border-t border-primary-foreground/20 flex flex-col sm:flex-row justify-between items-center gap-2 text-xs opacity-60">
