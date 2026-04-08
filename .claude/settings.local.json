@@ -1,0 +1,20 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm list:*)",
+      "Bash(npm show:*)",
+      "Bash(npm run:*)",
+      "Bash(npm install:*)",
+      "Bash(npx update-browserslist-db@latest --yes)",
+      "Bash(python3 -c \"import json,sys; versions=[v for v in json.load\\(sys.stdin\\) if v.startswith\\('9.'\\)]; print\\(versions[-5:]\\)\")",
+      "Bash(ls c:/surseGIT/predicare-expozitiva/.eslint*)",
+      "Bash(ls c:/surseGIT/predicare-expozitiva/eslint.config*)",
+      "Bash(npx next:*)",
+      "Bash(node -e \"const m = require\\('eslint-config-next'\\); console.log\\(Object.keys\\(m\\)\\)\")",
+      "Bash(node -e \"const m = require\\('eslint-config-next'\\); console.log\\(JSON.stringify\\(m, null, 2\\)\\)\")",
+      "Bash(node -e \"const m = require\\('eslint-config-next'\\); console.log\\(Object.keys\\(m\\)\\); if\\(m.configs\\) console.log\\('configs:', Object.keys\\(m.configs\\)\\);\")",
+      "Bash(node --input-type=module -e \"import cfg from 'eslint-config-next'; console.log\\(typeof cfg, Array.isArray\\(cfg\\)\\);\")",
+      "Bash(ls c:/surseGIT/predicare-expozitiva/.env*)"
+    ]
+  }
+}

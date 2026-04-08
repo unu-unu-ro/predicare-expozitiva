@@ -52,11 +52,7 @@ const staggerContainer = {
 };
 
 const TestimonialCarousel = () => {
-  const [items, setItems] = useState(testimonials);
-
-  useEffect(() => {
-    setItems(shuffle(testimonials));
-  }, []);
+  const [items] = useState(() => shuffle(testimonials));
   const [current, setCurrent] = useState(0);
   const total = items.length;
 
