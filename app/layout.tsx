@@ -1,6 +1,13 @@
 import type { Metadata } from "next";
+import { Cormorant_Garamond } from "next/font/google";
 import "./globals.css";
 import Providers from "./providers";
+
+const cormorantGaramond = Cormorant_Garamond({
+  subsets: ["latin"],
+  weight: ["400", "600"],
+  variable: "--font-cormorant",
+});
 
 const BASE_URL = "https://predicare-expozitiva.ro";
 const SITE_NAME = "Predicare Expozitivă – Ateliere de predicare";
@@ -37,7 +44,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <meta name="apple-mobile-web-app-title" content="Predicare expozitiva" />
         <link rel="manifest" href="/site.webmanifest" />
       </head>
-      <body>
+      <body className={cormorantGaramond.variable}>
         <Providers>{children}</Providers>
       </body>
     </html>

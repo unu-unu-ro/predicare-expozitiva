@@ -65,8 +65,19 @@ const SiteFooter = () => (
           </a>
         </div>
       </div>
-      <div className="mt-6 pt-4 border-t border-primary-foreground/20 text-center text-xs opacity-60">
-        © {new Date().getFullYear()} Ateliere de predicare expozitivă
+      <div className="mt-6 pt-4 border-t border-primary-foreground/20 flex flex-col sm:flex-row justify-between items-center gap-2 text-xs opacity-60">
+        <span>© {new Date().getFullYear()} Ateliere de predicare expozitivă</span>
+        <span>
+          Realizat cu bune intenții de către{" "}
+          <a
+            href="https://expozitiv.ro"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-cormorant text-sm font-semibold hover:opacity-100 transition-opacity underline underline-offset-2"
+          >
+            Studio Expozitiv
+          </a>
+        </span>
       </div>
     </div>
   </footer>
