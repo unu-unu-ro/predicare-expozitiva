@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Cormorant_Garamond } from "next/font/google";
 import "./globals.css";
 import Providers from "./providers";
+import { Analytics } from "@vercel/analytics/next";
 
 const cormorantGaramond = Cormorant_Garamond({
   subsets: ["latin"],
@@ -87,6 +88,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body className={cormorantGaramond.variable}>
         <Providers>{children}</Providers>
+        <Analytics />
       </body>
     </html>
   );
