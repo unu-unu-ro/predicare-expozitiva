@@ -1,27 +1,18 @@
 'use client';
 
-import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Layout from "@/components/Layout";
 import HeroBanner from "@/components/HeroBanner";
 import { Button } from "@/components/ui/button";
-import { MapPin, Calendar, ArrowRight, Loader2, Bell } from "lucide-react";
+import { MapPin, Calendar, ArrowRight, Bell } from "lucide-react";
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-
-interface EventItem {
-  date: string;
-  dateEnd: string;
-  title: string;
-  location: string;
-  type: string;
-  link: string;
-}
+import type { EventEntry as EventItem } from "@/lib/events";
 
 function formatDateRange(dateStr: string, dateEndStr: string): string {
   const months = [
@@ -47,20 +38,7 @@ function formatDateRange(dateStr: string, dateEndStr: string): string {
   return `${day}–${dayEnd} ${month} ${year}`;
 }
 
-const EvenimentePage = () => {
-  const [events, setEvents] = useState<EventItem[]>([]);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    fetch("/data/evenimente.json")
-      .then((r) => r.json())
-      .then((data: EventItem[]) => {
-        setEvents(data);
-        setLoading(false);
-      })
-      .catch(() => setLoading(false));
-  }, []);
-
+const EvenimentePage = ({ events }: { events: EventItem[] }) => {
   const today = new Date();
   today.setHours(0, 0, 0, 0);
 
@@ -88,12 +66,7 @@ const EvenimentePage = () => {
           </p>
         </motion.div>
 
-        {loading ? (
-          <div className="flex items-center justify-center py-8">
-            <Loader2 className="animate-spin text-muted-foreground" size={24} />
-          </div>
-        ) : (
-          <>
+        <>
             {/* Upcoming */}
             {upcoming.length > 0 ? (
               <div className="space-y-3">
@@ -163,7 +136,6 @@ const EvenimentePage = () => {
               </div>
             </motion.div>
           </>
-        )}
       </section>
     </Layout>
   );

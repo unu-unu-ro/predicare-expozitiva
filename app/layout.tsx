@@ -28,9 +28,42 @@ export const metadata: Metadata = {
     title: SITE_NAME,
     description:
       "Ateliere de predicare expozitivă în România, în parteneriat cu Charles Simeon Trust.",
-    images: [{ url: "/hero-bible.jpg" }],
+    images: [
+      {
+        url: "/hero-bible.jpg",
+        width: 1920,
+        height: 1080,
+        alt: "Biblie deschisă – Ateliere de predicare expozitivă",
+      },
+    ],
   },
-  alternates: { canonical: BASE_URL },
+  twitter: {
+    card: "summary_large_image",
+    title: SITE_NAME,
+    description:
+      "Ateliere de predicare expozitivă în România, în parteneriat cu Charles Simeon Trust.",
+    images: ["/hero-bible.jpg"],
+  },
+};
+
+const organizationJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "Predicare Expozitivă",
+  alternateName: SITE_NAME,
+  url: BASE_URL,
+  logo: `${BASE_URL}/web-app-manifest-512x512.png`,
+  description:
+    "Ateliere de predicare expozitivă în România, în parteneriat cu Charles Simeon Trust.",
+  sameAs: ["https://simeontrust.org/"],
+};
+
+const webSiteJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: SITE_NAME,
+  url: BASE_URL,
+  inLanguage: "ro",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -43,6 +76,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
         <meta name="apple-mobile-web-app-title" content="Predicare expozitiva" />
         <link rel="manifest" href="/site.webmanifest" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(webSiteJsonLd) }}
+        />
       </head>
       <body className={cormorantGaramond.variable}>
         <Providers>{children}</Providers>

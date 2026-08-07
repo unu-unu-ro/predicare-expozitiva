@@ -1,5 +1,6 @@
 'use client';
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 
 const heroBg = "/hero-bible.jpg";
@@ -11,10 +12,13 @@ interface HeroBannerProps {
 
 const HeroBanner = ({ title, subtitle }: HeroBannerProps) => (
   <div className="relative h-[180px] md:h-[220px] flex items-center justify-center overflow-hidden">
-    <img
+    <Image
       src={heroBg}
       alt=""
-      className="absolute inset-0 w-full h-full object-cover"
+      fill
+      priority
+      sizes="100vw"
+      className="object-cover"
     />
     <div className="absolute inset-0 bg-gradient-to-r from-foreground/85 via-foreground/70 to-foreground/50" />
     <motion.div

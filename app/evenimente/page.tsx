@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import EvenimentePage from "./EvenimentePage";
+import { getAllEvents, eventJsonLd } from "@/lib/events";
 
 const BASE_URL = "https://predicare-expozitiva.ro";
 
@@ -18,5 +19,16 @@ export const metadata: Metadata = {
 };
 
 export default function Page() {
-  return <EvenimentePage />;
+  const events = getAllEvents();
+  const jsonLd = events.map((e) => eventJsonLd(e, BASE_URL));
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <EvenimentePage events={events} />
+    </>
+  );
 }
